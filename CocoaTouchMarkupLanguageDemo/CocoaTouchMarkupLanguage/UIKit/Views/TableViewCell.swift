@@ -30,6 +30,12 @@ class TableViewCell: UITableViewCell {
         stackView?.addArrangedSubview(view)
     }
 
+    @objc var relativeToMargins: Bool = false {
+        didSet {
+            setNeedsUpdateConstraints()
+        }
+    }
+
     override func updateConstraints() {
         super.updateConstraints()
 
@@ -42,7 +48,7 @@ class TableViewCell: UITableViewCell {
             return
         }
 
-        let margins = layoutMargins
+        let margins = relativeToMargins ? layoutMargins : .zero
 
         let constraints = [
             stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: margins.top),
