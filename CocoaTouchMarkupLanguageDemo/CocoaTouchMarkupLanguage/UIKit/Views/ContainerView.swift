@@ -84,6 +84,8 @@ class ContainerView: UIView {
             else {
                 // TODO: error
             }
+
+            return
         }
 
         super.setValue(value, forKey: key)
