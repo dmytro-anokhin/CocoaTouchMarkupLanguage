@@ -9,10 +9,12 @@
 import UIKit
 
 
-/// The ImageView provides basic loading image from URL implementation, suitable for demo but not real life usage.
+/// The ImageView provides bogus loading image from URL implementation, suitable for demo but not real life usage. Real life implementation should provide local caching and prevent multiple loading image for same url.
 class ImageView: UIImageView {
 
     static var queue = DispatchQueue(label: "CocoaTouchMarkupLanguage.ImageView")
+
+    static let cache = NSCache<NSURL, UIImage>()
 
     @objc var imageName: String? {
         didSet {
@@ -72,26 +74,37 @@ class ImageView: UIImageView {
     }
 
     private func loadImage(with url: URL) {
+        if let cachedImage = ImageView.cache.object(forKey: url as NSURL) {
+            self.image = cachedImage
+            return
+        }
+
         imageLoadURL = url
 
         let imageLoadWorkItem = DispatchWorkItem { [weak self] in
+            var image: UIImage?
+
             do {
                 let data = try Data(contentsOf: url)
-                let image = UIImage(data: data)
-
-                DispatchQueue.main.async {
-                    guard let `self` = self else {
-                        return
-                    }
-
-                    if self.imageLoadURL == url {
-                        self.image = image
-                        self.imageLoadURL = nil
-                    }
-                }
+                image = UIImage(data: data)
             }
             catch {
                 print(error)
+            }
+
+            DispatchQueue.main.async {
+                guard let `self` = self else {
+                    return
+                }
+
+                if self.imageLoadURL == url {
+                    self.image = image
+                    self.imageLoadURL = nil
+
+                    if let imageToCache = image {
+                        ImageView.cache.setObject(imageToCache, forKey: url as NSURL)
+                    }
+                }
             }
         }
 
