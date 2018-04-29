@@ -1,0 +1,30 @@
+<viewController>
+
+    <tableView>
+
+        <binding name="rows" keyPath="countries"/>
+
+        <prototypes>
+            <tableViewCell>
+                <subviews>
+                    <stackView axis="horizontal" spacing="16.0" alignment="center">
+                        <subviews>
+                            <view className="ImageView" width="40.0" height="40.0">
+                                <binding name="imagePath" keyPath="imagePath"/>
+                            </view>
+                            <view className="UILabel">
+                                <binding name="text" keyPath="name"/>
+                            </view>
+                        </subviews>
+                    </stackView>
+                </subviews>
+            </tableViewCell>
+        </prototypes>
+
+    </tableView>
+
+    <representedObject>
+        <bundleResource name="countries" extension="json"/>
+    </representedObject>
+
+</viewController>

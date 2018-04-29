@@ -1,0 +1,29 @@
+<viewController>
+
+    <view className="ContainerView" relativeToMargins="true">
+        <color key="backgroundColor" red="0.2" green="0.4" blue="0.4" alpha="1.0" colorSpace="rgb"/>
+        <stackView key="contentView" axis="vertical" spacing="8.0" alignment="center">
+            <subviews>
+                <stackView key="contentView">
+                    <subviews>
+                        <view className="UILabel" text="Hello, ">
+                            <color key="textColor" red="1.0" green="1.0" blue="1.0" alpha="1.0" colorSpace="rgb"/>
+                        </view>
+                        <view className="UILabel">
+                            <color key="textColor" red="1.0" green="1.0" blue="1.0" alpha="1.0" colorSpace="rgb"/>
+                            <binding name="text" keyPath="name"/>
+                        </view>
+                    </subviews>
+                </stackView>
+                <textField placeholder="Your Name">
+                    <binding name="text" keyPath="name"/>
+                </textField>
+            </subviews>
+        </stackView>
+    </view>
+
+    <representedObject>
+        <bundleResource name="SimpleFormData" extension="json"/>
+    </representedObject>
+
+</viewController>

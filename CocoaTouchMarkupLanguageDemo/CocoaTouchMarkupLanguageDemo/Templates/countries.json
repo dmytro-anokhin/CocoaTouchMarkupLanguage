@@ -1,0 +1,204 @@
+{
+    "countries" : [
+        {
+            "name" : "Argentina",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Argentina.png"
+        },
+        {
+            "name" : "Australia",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Australia.png"
+        },
+        {
+            "name" : "Austria",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Austria.png"
+        },
+        {
+            "name" : "Belgium",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Belgium.png"
+        },
+        {
+            "name" : "Brazil",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Brazil.png"
+        },
+        {
+            "name" : "Cameroon",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Cameroon.png"
+        },
+        {
+            "name" : "Canada",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Canada.png"
+        },
+        {
+            "name" : "Chile",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Chile.png"
+        },
+        {
+            "name" : "China",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/China.png"
+        },
+        {
+            "name" : "Denmark",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Denmark.png"
+        },
+        {
+            "name" : "Finland",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Finland.png"
+        },
+        {
+            "name" : "France",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/France.png"
+        },
+        {
+            "name" : "Germany",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Germany.png"
+        },
+        {
+            "name" : "Greece",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Greece.png"
+        },
+        {
+            "name" : "Hong Kong",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Hong Kong.png"
+        },
+        {
+            "name" : "Hungary",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Hungary.png"
+        },
+        {
+            "name" : "Iceland",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Iceland.png"
+        },
+        {
+            "name" : "India",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/India.png"
+        },
+        {
+            "name" : "Indonesia",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Indonesia.png"
+        },
+        {
+            "name" : "Ireland",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Ireland.png"
+        },
+        {
+            "name" : "Israel",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Israel.png"
+        },
+        {
+            "name" : "Italy",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Italy.png"
+        },
+        {
+            "name" : "Japan",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Japan.png"
+        },
+        {
+            "name" : "Malaysia",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Malaysia.png"
+        },
+        {
+            "name" : "Mexico",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Mexico.png"
+        },
+        {
+            "name" : "Netherlands",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Netherlands.png"
+        },
+        {
+            "name" : "New Zealand",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/New Zealand.png"
+        },
+        {
+            "name" : "Norway",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Norway.png"
+        },
+        {
+            "name" : "Pakistan",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Pakistan.png"
+        },
+        {
+            "name" : "Palestine",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Palestine.png"
+        },
+        {
+            "name" : "Peru",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Peru.png"
+        },
+        {
+            "name" : "Poland",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Poland.png"
+        },
+        {
+            "name" : "Portugal",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Portugal.png"
+        },
+        {
+            "name" : "Puerto Rico",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Puerto Rico.png"
+        },
+        {
+            "name" : "Romania",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Romania.png"
+        },
+        {
+            "name" : "Russia",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Russia.png"
+        },
+        {
+            "name" : "Saudi Arabia",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Saudi Arabia.png"
+        },
+        {
+            "name" : "Singapore",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Singapore.png"
+        },
+        {
+            "name" : "South Africa",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/South Africa.png"
+        },
+        {
+            "name" : "South Korea",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/South Korea.png"
+        },
+        {
+            "name" : "Spain",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Spain.png"
+        },
+        {
+            "name" : "Sweden",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Sweden.png"
+        },
+        {
+            "name" : "Switzerland",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Switzerland.png"
+        },
+        {
+            "name" : "Thailand",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Thailand.png"
+        },
+        {
+            "name" : "Turkey",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Turkey.png"
+        },
+        {
+            "name" : "UK",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/UK.png"
+        },
+        {
+            "name" : "Ukraine",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Ukraine.png"
+        },
+        {
+            "name" : "Uruguay",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Uruguay.png"
+        },
+        {
+            "name" : "USA",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/USA.png"
+        },
+        {
+            "name" : "Venezuela",
+            "imagePath" : "/Library/Application Support/Apple/iChat Icons/Flags/Venezuela.png"
+        }
+    ]
+}
