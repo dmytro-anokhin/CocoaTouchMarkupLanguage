@@ -9,6 +9,7 @@
 import UIKit
 
 
+/// The ImageView provides basic loading image from URL implementation, suitable for demo but not real life usage.
 class ImageView: UIImageView {
 
     static var queue = DispatchQueue(label: "CocoaTouchMarkupLanguage.ImageView")

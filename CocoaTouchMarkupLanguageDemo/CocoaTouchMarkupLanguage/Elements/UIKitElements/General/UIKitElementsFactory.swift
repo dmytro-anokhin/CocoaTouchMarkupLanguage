@@ -14,6 +14,9 @@ class UIKitElementsFactory: ElementsFactory {
             case "color":
                 return try ColorElement(from: xmlNode)
 
+            case "font":
+                return try FontElement(from: xmlNode)
+
             case "view":
                 return try ViewElement(from: xmlNode)
 

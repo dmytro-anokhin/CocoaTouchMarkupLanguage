@@ -1,0 +1,41 @@
+<viewController>
+
+    <tableView>
+
+        <binding name="rows" keyPath="festivals"/>
+
+        <prototypes>
+            <tableViewCell>
+                <subviews>
+
+                    <stackView axis="vertical" spacing="10.0">
+                        <subviews>
+
+                            <view className="ImageView" height="80.0" contentMode="scaleAspectFill" clipsToBounds="true">
+                                <binding name="imageURL" keyPath="media.@first.url"/>
+                            </view>
+
+                            <view className="UILabel" numberOfLines="2">
+                                <binding name="text" keyPath="title"/>
+                                <font key="font" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                            </view>
+
+                            <view className="UILabel" numberOfLines="3">
+                                <binding name="text" keyPath="details.en.shortdescription"/>
+                                <font key="font" type="system" pointSize="15"/>
+                            </view>
+
+                        </subviews>
+                    </stackView>
+
+                </subviews>
+            </tableViewCell>
+        </prototypes>
+
+    </tableView>
+
+    <representedObject>
+        <bundleResource name="Festivals" extension="json"/>
+    </representedObject>
+
+</viewController>

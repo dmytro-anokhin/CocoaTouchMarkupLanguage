@@ -26,6 +26,11 @@
 		F4558A1B209617EA007F4703 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4558A1A209617EA007F4703 /* UIView+Extensions.swift */; };
 		F4558A1D20961AFF007F4703 /* UIView+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4558A1C20961AFF007F4703 /* UIView+String.swift */; };
 		F4558A1F209627FA007F4703 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4558A1E209627FA007F4703 /* ImageView.swift */; };
+		F4558A2120962F0F007F4703 /* Festivals.json in Resources */ = {isa = PBXBuildFile; fileRef = F4558A2020962F0F007F4703 /* Festivals.json */; };
+		F4558A2320962F2E007F4703 /* Festivals.xml in Resources */ = {isa = PBXBuildFile; fileRef = F4558A2220962F2E007F4703 /* Festivals.xml */; };
+		F4558A2620962FCD007F4703 /* NSArray+KeyValueCodingOperations.h in Headers */ = {isa = PBXBuildFile; fileRef = F4558A2420962FCD007F4703 /* NSArray+KeyValueCodingOperations.h */; };
+		F4558A2720962FCD007F4703 /* NSArray+KeyValueCodingOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = F4558A2520962FCD007F4703 /* NSArray+KeyValueCodingOperations.m */; };
+		F4558A2920963487007F4703 /* FontElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4558A2820963487007F4703 /* FontElement.swift */; };
 		F45E79CD209182F0009D5016 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45E79CC209182F0009D5016 /* AppDelegate.swift */; };
 		F45E79D4209182F1009D5016 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F45E79D3209182F1009D5016 /* Assets.xcassets */; };
 		F45E79D7209182F1009D5016 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45E79D5209182F1009D5016 /* LaunchScreen.storyboard */; };
@@ -140,6 +145,11 @@
 		F4558A1A209617EA007F4703 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		F4558A1C20961AFF007F4703 /* UIView+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+String.swift"; sourceTree = "<group>"; };
 		F4558A1E209627FA007F4703 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		F4558A2020962F0F007F4703 /* Festivals.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Festivals.json; sourceTree = "<group>"; };
+		F4558A2220962F2E007F4703 /* Festivals.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Festivals.xml; sourceTree = "<group>"; };
+		F4558A2420962FCD007F4703 /* NSArray+KeyValueCodingOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+KeyValueCodingOperations.h"; sourceTree = "<group>"; };
+		F4558A2520962FCD007F4703 /* NSArray+KeyValueCodingOperations.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+KeyValueCodingOperations.m"; sourceTree = "<group>"; };
+		F4558A2820963487007F4703 /* FontElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontElement.swift; sourceTree = "<group>"; };
 		F45E79C9209182F0009D5016 /* CocoaTouchMarkupLanguageDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaTouchMarkupLanguageDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F45E79CC209182F0009D5016 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F45E79D3209182F1009D5016 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -463,6 +473,7 @@
 				F4CB269420947BA200258410 /* UIKitElementsFactory.swift */,
 				F4CB26862094710700258410 /* ColorElement.swift */,
 				F4558A13209612D4007F4703 /* ImageElement.swift */,
+				F4558A2820963487007F4703 /* FontElement.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -488,6 +499,8 @@
 				F4CB26BC2094CF5000258410 /* SimpleFormData.json */,
 				F45589FC2094E8EC007F4703 /* Countries.xml */,
 				F45589FE2094E9AA007F4703 /* countries.json */,
+				F4558A2220962F2E007F4703 /* Festivals.xml */,
+				F4558A2020962F0F007F4703 /* Festivals.json */,
 			);
 			path = Templates;
 			sourceTree = "<group>";
@@ -497,6 +510,8 @@
 			children = (
 				F4CB26A12094A81C00258410 /* DoTryCatch.h */,
 				F4CB26A22094A81C00258410 /* DoTryCatch.m */,
+				F4558A2420962FCD007F4703 /* NSArray+KeyValueCodingOperations.h */,
+				F4558A2520962FCD007F4703 /* NSArray+KeyValueCodingOperations.m */,
 				F4CB26A92094B11500258410 /* CGFloat+LosslessStringConvertible.swift */,
 				F4CB26B62094C7FF00258410 /* UILayoutConstraintAxis+String.swift */,
 				F4CB26B82094C81F00258410 /* UIStackView+String.swift */,
@@ -540,6 +555,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4CB26A32094A81C00258410 /* DoTryCatch.h in Headers */,
+				F4558A2620962FCD007F4703 /* NSArray+KeyValueCodingOperations.h in Headers */,
 				F45E79F520918309009D5016 /* CocoaTouchMarkupLanguage.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -654,10 +670,12 @@
 				F45E79D7209182F1009D5016 /* LaunchScreen.storyboard in Resources */,
 				F45589FF2094E9AA007F4703 /* countries.json in Resources */,
 				F4CB26A82094AECD00258410 /* SimpleForm.xml in Resources */,
+				F4558A2320962F2E007F4703 /* Festivals.xml in Resources */,
 				F45E79D4209182F1009D5016 /* Assets.xcassets in Resources */,
 				F4CB269D209485E100258410 /* EmptyView.xml in Resources */,
 				F4CB26BD2094CF5000258410 /* SimpleFormData.json in Resources */,
 				F45589FD2094E8EC007F4703 /* Countries.xml in Resources */,
+				F4558A2120962F0F007F4703 /* Festivals.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -730,6 +748,7 @@
 				F4CB26B72094C7FF00258410 /* UILayoutConstraintAxis+String.swift in Sources */,
 				F4CB26982094849C00258410 /* ViewElement.swift in Sources */,
 				F4CB26602094490A00258410 /* ObservationToken.swift in Sources */,
+				F4558A2920963487007F4703 /* FontElement.swift in Sources */,
 				F4CB26AD2094B4DA00258410 /* ContainerView.swift in Sources */,
 				F4CB2674209465C100258410 /* XMLNode+CustomStringConvertible.swift in Sources */,
 				F45E7A1320918AE5009D5016 /* ObjectController+JSON.swift in Sources */,
@@ -739,6 +758,7 @@
 				F4CB267D20946E0100258410 /* XMLDecodable.swift in Sources */,
 				F4558A072095B89B007F4703 /* TableViewElementsFactory.swift in Sources */,
 				F4CB26C72094DA3200258410 /* TextFieldElement.swift in Sources */,
+				F4558A2720962FCD007F4703 /* NSArray+KeyValueCodingOperations.m in Sources */,
 				F4CB26722094659900258410 /* XMLNode+Debugging.swift in Sources */,
 				F4558A1D20961AFF007F4703 /* UIView+String.swift in Sources */,
 				F4CB26BB2094C87100258410 /* StackViewElement.swift in Sources */,
