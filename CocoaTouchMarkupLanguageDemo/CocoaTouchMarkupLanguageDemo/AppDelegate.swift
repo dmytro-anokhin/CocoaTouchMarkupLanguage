@@ -42,25 +42,15 @@ class EntrypointViewController: UITableViewController {
         return cell
     }
 
-    private var currentViewControllerElement: ViewControllerElement?
-
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let parser = Parser(url: Bundle.main.url(forResource: entries[indexPath.row], withExtension: "xml")!)
 
         parser.parse { xmlNode in
-            guard let xmlNode = xmlNode else {
-                return
-            }
+            var builder = ViewControllerBuilder()
+            builder.xmlNode = xmlNode
 
             do {
-                self.currentViewControllerElement = try ViewControllerElement(from: xmlNode)
-
-                if let viewController = self.currentViewControllerElement?.viewController {
-                    self.navigationController?.pushViewController(viewController, animated: true)
-                }
-                else {
-                    print("View Controller Element failed to instantiate")
-                }
+                self.navigationController?.pushViewController(try builder.build(), animated: true)
             }
             catch {
                 print(error)

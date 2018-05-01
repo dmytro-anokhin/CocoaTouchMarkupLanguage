@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F42872832091EB9900379048 /* CityNames.json in Resources */ = {isa = PBXBuildFile; fileRef = F42872822091EB9900379048 /* CityNames.json */; };
 		F42872852091FC7000379048 /* ObjectControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42872842091FC7000379048 /* ObjectControllerTests.swift */; };
+		F434842920981655009D2D36 /* ViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434842820981655009D2D36 /* ViewControllerBuilder.swift */; };
 		F45589F82094DCA4007F4703 /* KeyValueBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45589F72094DCA4007F4703 /* KeyValueBinding.swift */; };
 		F45589FB2094DCC4007F4703 /* BindingElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45589FA2094DCC4007F4703 /* BindingElement.swift */; };
 		F45589FD2094E8EC007F4703 /* Countries.xml in Resources */ = {isa = PBXBuildFile; fileRef = F45589FC2094E8EC007F4703 /* Countries.xml */; };
@@ -128,6 +129,7 @@
 /* Begin PBXFileReference section */
 		F42872822091EB9900379048 /* CityNames.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CityNames.json; sourceTree = "<group>"; };
 		F42872842091FC7000379048 /* ObjectControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectControllerTests.swift; sourceTree = "<group>"; };
+		F434842820981655009D2D36 /* ViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerBuilder.swift; sourceTree = "<group>"; };
 		F45589F72094DCA4007F4703 /* KeyValueBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueBinding.swift; sourceTree = "<group>"; };
 		F45589FA2094DCC4007F4703 /* BindingElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingElement.swift; sourceTree = "<group>"; };
 		F45589FC2094E8EC007F4703 /* Countries.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Countries.xml; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 				F4CB266A209464B700258410 /* XMLParser */,
 				F45E7A0220918448009D5016 /* ObjectController */,
 				F45E7A0120918422009D5016 /* UIKit */,
+				F4E65E0F209815900045E82E /* Navigation */,
 				F4CB26A02094A7E600258410 /* Utils */,
 				F45E79E520918308009D5016 /* CocoaTouchMarkupLanguage.h */,
 				F45E79E620918308009D5016 /* Info.plist */,
@@ -547,6 +550,14 @@
 			path = Controls;
 			sourceTree = "<group>";
 		};
+		F4E65E0F209815900045E82E /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				F434842820981655009D2D36 /* ViewControllerBuilder.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -749,6 +760,7 @@
 				F4CB26982094849C00258410 /* ViewElement.swift in Sources */,
 				F4CB26602094490A00258410 /* ObservationToken.swift in Sources */,
 				F4558A2920963487007F4703 /* FontElement.swift in Sources */,
+				F434842920981655009D2D36 /* ViewControllerBuilder.swift in Sources */,
 				F4CB26AD2094B4DA00258410 /* ContainerView.swift in Sources */,
 				F4CB2674209465C100258410 /* XMLNode+CustomStringConvertible.swift in Sources */,
 				F45E7A1320918AE5009D5016 /* ObjectController+JSON.swift in Sources */,
