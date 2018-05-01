@@ -76,7 +76,6 @@
 		F4CB26AA2094B11500258410 /* CGFloat+LosslessStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CB26A92094B11500258410 /* CGFloat+LosslessStringConvertible.swift */; };
 		F4CB26AD2094B4DA00258410 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CB26AC2094B4DA00258410 /* ContainerView.swift */; };
 		F4CB26AF2094B6A400258410 /* Keyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CB26AE2094B6A400258410 /* Keyword.swift */; };
-		F4CB26B32094BD6600258410 /* SubviewsElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CB26B22094BD6600258410 /* SubviewsElement.swift */; };
 		F4CB26B52094C29D00258410 /* PropertyElementType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CB26B42094C29D00258410 /* PropertyElementType.swift */; };
 		F4CB26B72094C7FF00258410 /* UILayoutConstraintAxis+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CB26B62094C7FF00258410 /* UILayoutConstraintAxis+String.swift */; };
 		F4CB26B92094C81F00258410 /* UIStackView+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CB26B82094C81F00258410 /* UIStackView+String.swift */; };
@@ -199,7 +198,6 @@
 		F4CB26A92094B11500258410 /* CGFloat+LosslessStringConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+LosslessStringConvertible.swift"; sourceTree = "<group>"; };
 		F4CB26AC2094B4DA00258410 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		F4CB26AE2094B6A400258410 /* Keyword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyword.swift; sourceTree = "<group>"; };
-		F4CB26B22094BD6600258410 /* SubviewsElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubviewsElement.swift; sourceTree = "<group>"; };
 		F4CB26B42094C29D00258410 /* PropertyElementType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyElementType.swift; sourceTree = "<group>"; };
 		F4CB26B62094C7FF00258410 /* UILayoutConstraintAxis+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILayoutConstraintAxis+String.swift"; sourceTree = "<group>"; };
 		F4CB26B82094C81F00258410 /* UIStackView+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+String.swift"; sourceTree = "<group>"; };
@@ -487,7 +485,6 @@
 				F4CB2699209484B100258410 /* ViewElementsFactory.swift */,
 				F4CB269E2094885500258410 /* ViewPrototypeElement.swift */,
 				F4CB26972094849C00258410 /* ViewElement.swift */,
-				F4CB26B22094BD6600258410 /* SubviewsElement.swift */,
 				F4CB26BA2094C87100258410 /* StackViewElement.swift */,
 				F4CB26C62094DA3200258410 /* TextFieldElement.swift */,
 			);
@@ -755,7 +752,6 @@
 				F4CB266420944E9300258410 /* KeyValueCoding.swift in Sources */,
 				F4CB267920946CF100258410 /* ElementType.swift in Sources */,
 				F45E7A0420918471009D5016 /* ObjectController.swift in Sources */,
-				F4CB26B32094BD6600258410 /* SubviewsElement.swift in Sources */,
 				F4CB26B72094C7FF00258410 /* UILayoutConstraintAxis+String.swift in Sources */,
 				F4CB26982094849C00258410 /* ViewElement.swift in Sources */,
 				F4CB26602094490A00258410 /* ObservationToken.swift in Sources */,

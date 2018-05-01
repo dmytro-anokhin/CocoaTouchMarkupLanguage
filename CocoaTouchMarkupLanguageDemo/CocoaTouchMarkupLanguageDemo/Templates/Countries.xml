@@ -6,18 +6,14 @@
 
         <prototypes>
             <tableViewCell relativeToMargins="true">
-                <subviews>
-                    <stackView axis="horizontal" spacing="16.0" alignment="center">
-                        <subviews>
-                            <view className="ImageView" width="40.0" height="40.0">
-                                <binding name="imagePath" keyPath="imagePath"/>
-                            </view>
-                            <view className="UILabel">
-                                <binding name="text" keyPath="name"/>
-                            </view>
-                        </subviews>
-                    </stackView>
-                </subviews>
+                <stackView axis="horizontal" spacing="16.0" alignment="center">
+                    <view className="ImageView" width="40.0" height="40.0">
+                        <binding name="imagePath" keyPath="imagePath"/>
+                    </view>
+                    <view className="UILabel">
+                        <binding name="text" keyPath="name"/>
+                    </view>
+                </stackView>
             </tableViewCell>
         </prototypes>
 

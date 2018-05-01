@@ -6,37 +6,25 @@
 
         <prototypes>
             <tableViewCell relativeToMargins="false">
-                <subviews>
+                <stackView axis="vertical">
+                    <view className="ImageView" height="80.0" contentMode="scaleAspectFill" clipsToBounds="true">
+                        <binding name="imageURL" keyPath="media.@first.url"/>
+                    </view>
 
-                    <stackView axis="vertical">
-                        <subviews>
-
-                            <view className="ImageView" height="80.0" contentMode="scaleAspectFill" clipsToBounds="true">
-                                <binding name="imageURL" keyPath="media.@first.url"/>
+                    <view className="ContainerView" alignment="leading" relativeToMargins="true">
+                        <stackView key="contentView" axis="vertical" spacing="8.0">
+                            <view className="UILabel" numberOfLines="2">
+                                <binding name="text" keyPath="title"/>
+                                <font key="font" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                             </view>
 
-                            <view className="ContainerView" alignment="leading" relativeToMargins="true">
-                                <stackView key="contentView" axis="vertical" spacing="8.0">
-                                    <subviews>
-
-                                        <view className="UILabel" numberOfLines="2">
-                                            <binding name="text" keyPath="title"/>
-                                            <font key="font" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                                        </view>
-
-                                        <view className="UILabel" numberOfLines="4">
-                                            <binding name="text" keyPath="details.en.shortdescription"/>
-                                            <font key="font" type="system" pointSize="15"/>
-                                        </view>
-
-                                    </subviews>
-                                </stackView>
+                            <view className="UILabel" numberOfLines="4">
+                                <binding name="text" keyPath="details.en.shortdescription"/>
+                                <font key="font" type="system" pointSize="15"/>
                             </view>
-
-                        </subviews>
-                    </stackView>
-
-                </subviews>
+                        </stackView>
+                    </view>
+                </stackView>
             </tableViewCell>
         </prototypes>
 

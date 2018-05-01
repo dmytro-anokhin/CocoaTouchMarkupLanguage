@@ -55,11 +55,11 @@ class ViewElement: Element, PropertyElementType {
 
         for child in children {
             switch child {
+                case let subview as ViewElement where subview.key == nil:
+                    addSubview(subview, view: view)
+
                 case let property as ElementType & PropertyElementType:
                     setProperty(property, view: view)
-
-                case let subviews as SubviewsElement:
-                    addSubviews(subviews, view: view)
 
                 default:
                     unknownChild(child, view: view)
@@ -99,15 +99,13 @@ class ViewElement: Element, PropertyElementType {
             })
     }
 
-    func addSubviews(_ subviews: SubviewsElement, view: UIView) {
-        for case let subview as ViewElement in subviews.children {
-            switch view {
-                case let stackView as UIStackView:
-                    stackView.addArrangedSubview(subview.view)
+    func addSubview(_ subview: ViewElement, view: UIView) {
+        switch view {
+            case let stackView as UIStackView:
+                stackView.addArrangedSubview(subview.view)
 
-                default:
-                    view.addSubview(subview.view)
-            }
+            default:
+                view.addSubview(subview.view)
         }
     }
 

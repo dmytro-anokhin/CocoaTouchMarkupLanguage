@@ -63,12 +63,11 @@ func connect(viewElement rootViewElement: ViewElement, objectController: ObjectC
         var subviewElements: [ViewElement] = []
 
         for element in viewElement.children {
-            if let subviewElement = element as? ViewElement {
-                subviewElements.append(subviewElement)
+            guard let subviewElement = element as? ViewElement else {
+                continue
             }
-            else if let subviewsElement = element as? SubviewsElement {
-                subviewElements.append(contentsOf: subviewsElement.children.compactMap({ $0 as? ViewElement }))
-            }
+
+            subviewElements.append(subviewElement)
         }
 
         viewElements.append(contentsOf: subviewElements)

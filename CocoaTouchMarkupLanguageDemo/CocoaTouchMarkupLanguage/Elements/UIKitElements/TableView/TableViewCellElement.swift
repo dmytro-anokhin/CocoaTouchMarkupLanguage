@@ -29,19 +29,17 @@ class TableViewCellElement: ViewElement {
         return cellClass.init(style: .default, reuseIdentifier: reuseIdentifier)
     }
 
-    override func addSubviews(_ subviews: SubviewsElement, view: UIView) {
+    override func addSubview(_ subview: ViewElement, view: UIView) {
         guard let cell = view as? UITableViewCell else {
             assertionFailure("Expected UITableViewCell instance, got \(view)")
             return
         }
 
-        for case let subview as ViewElement in subviews.children {
-            if let cell = cell as? TableViewCell {
-                cell.addArrangedSubview(subview.view)
-            }
-            else {
-                cell.contentView.addSubview(subview.view)
-            }
+        if let cell = cell as? TableViewCell {
+            cell.addArrangedSubview(subview.view)
+        }
+        else {
+            cell.contentView.addSubview(subview.view)
         }
     }
 }
