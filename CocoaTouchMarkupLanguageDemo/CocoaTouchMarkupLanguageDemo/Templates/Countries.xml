@@ -2,10 +2,10 @@
 
     <tableView>
 
-        <binding name="rows" keyPath="countries"/>
+        <binding name="rows" keyPath="model.countries"/>
 
         <prototypes>
-            <tableViewCell>
+            <tableViewCell relativeToMargins="true">
                 <subviews>
                     <stackView axis="horizontal" spacing="16.0" alignment="center">
                         <subviews>
@@ -24,7 +24,7 @@
     </tableView>
 
     <representedObject>
-        <bundleResource name="countries" extension="json"/>
+        <bundleResource key="model" name="countries" extension="json"/>
     </representedObject>
 
 </viewController>

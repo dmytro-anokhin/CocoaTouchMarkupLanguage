@@ -21,19 +21,23 @@ class ObjectControllerElement: Element {
 
     private func loadObjectController() -> ObjectController {
 
-        let bundleResourceElement = children.first { $0 is BundleResourceElement } as? BundleResourceElement
-        let url = bundleResourceElement?.url
+        let objectController = ObjectController()
 
-        if let url = url {
-            do {
-                let data = try Data(contentsOf: url)
-                return try ObjectController.json(data)
-            }
-            catch {
-                preconditionFailure(String(describing: error))
+        for child in children {
+            switch child {
+                case let property as ElementType & PropertyElementType:
+                    guard let key = property.key else {
+                        assertionFailure("Property element expected to have a key: \(property)")
+                        break
+                    }
+
+                    objectController.setValue(property.value, forKey: key)
+
+                default:
+                    print(child)
             }
         }
 
-        return ObjectController()
+        return objectController
     }
 }

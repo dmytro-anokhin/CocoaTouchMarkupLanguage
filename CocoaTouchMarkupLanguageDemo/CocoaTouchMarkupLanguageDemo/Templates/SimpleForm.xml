@@ -11,7 +11,7 @@
                         </view>
                         <view className="UILabel">
                             <color key="textColor" red="1.0" green="1.0" blue="1.0" alpha="1.0" colorSpace="rgb"/>
-                            <binding name="text" keyPath="name"/>
+                            <binding name="text" keyPath="model.name"/>
                         </view>
                     </subviews>
                 </stackView>
@@ -23,7 +23,7 @@
     </view>
 
     <representedObject>
-        <bundleResource name="SimpleFormData" extension="json"/>
+        <bundleResource key="model" name="SimpleFormData" extension="json"/>
     </representedObject>
 
 </viewController>

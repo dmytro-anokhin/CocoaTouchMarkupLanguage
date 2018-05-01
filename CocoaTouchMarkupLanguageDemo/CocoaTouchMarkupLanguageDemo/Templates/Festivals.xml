@@ -43,7 +43,7 @@
     </tableView>
 
     <representedObject>
-        <bundleResource name="Festivals" extension="json"/>
+        <bundleResource key="festivals" name="Festivals" extension="json"/>
     </representedObject>
 
 </viewController>
