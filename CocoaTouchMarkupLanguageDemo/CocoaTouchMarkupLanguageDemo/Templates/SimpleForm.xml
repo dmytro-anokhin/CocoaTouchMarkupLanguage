@@ -16,7 +16,7 @@
                     </subviews>
                 </stackView>
                 <textField placeholder="Your Name">
-                    <binding name="text" keyPath="name"/>
+                    <binding name="text" keyPath="model.name"/>
                 </textField>
             </subviews>
         </stackView>
