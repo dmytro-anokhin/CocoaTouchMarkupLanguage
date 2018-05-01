@@ -57,10 +57,17 @@ public class Element: ElementType, XMLDecodable {
         return aClass
     }
 
-    var dublicateChildren: [ElementType] {
-        return children.map {
-                (type(of: $0) as! Element.Type).init(name: $0.name, children: ($0 as! Element).dublicateChildren, attributes: $0.attributes) as ElementType
-            }
+    func setProperty(_ property: ElementType & PropertyElementType, object: KeyValueCoding) {
+        guard let key = property.key else {
+            assertionFailure("Property element expected to have a key: \(property)")
+            return
+        }
+
+        objc_do({
+                object.setValue(property.value, forKey: key)
+            }, { exception in
+                print(String(describing: exception))
+            })
     }
 }
 

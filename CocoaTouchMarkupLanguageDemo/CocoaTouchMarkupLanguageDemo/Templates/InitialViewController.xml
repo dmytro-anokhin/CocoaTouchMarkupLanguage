@@ -1,0 +1,30 @@
+<navigationController>
+    <viewController key="rootViewController">
+
+        <tableView>
+
+            <binding name="rows" keyPath="demos"/>
+
+            <prototypes>
+                <tableViewCell relativeToMargins="true">
+                    <view className="UILabel">
+                        <binding name="text" keyPath="self"/>
+                    </view>
+
+                    <action kind="show">
+                        <viewController>
+                            <binding name="name" keyPath="self"/>
+                        </viewController>
+                    </action>
+
+                </tableViewCell>
+            </prototypes>
+
+        </tableView>
+
+        <representedObject>
+            <bundleResource key="demos" name="Demos" extension="plist"/>
+        </representedObject>
+
+    </viewController>
+</navigationController>

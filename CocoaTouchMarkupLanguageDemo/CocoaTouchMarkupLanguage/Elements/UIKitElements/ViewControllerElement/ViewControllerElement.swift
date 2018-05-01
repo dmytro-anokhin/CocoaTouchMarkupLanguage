@@ -9,7 +9,11 @@
 import UIKit
 
 
-public class ViewControllerElement: Element {
+public class ViewControllerElement: Element, PropertyElementType {
+
+    var value: Any? {
+        return viewController
+    }
 
     override public class var factory: ElementsFactoryType {
         return ViewControllerElementsFactory()

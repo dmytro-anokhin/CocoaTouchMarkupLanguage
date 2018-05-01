@@ -17,6 +17,9 @@ class ElementsFactory: ElementsFactoryType {
 
     func element(for xmlNode: XMLNode) throws -> ElementType {
         switch xmlNode.name {
+            case "prototype":
+                return try ElementPrototype(from: xmlNode)
+
             case "string":
                 return try PropertyElement(from: xmlNode)
 

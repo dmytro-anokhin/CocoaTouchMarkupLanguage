@@ -59,7 +59,7 @@ class ViewElement: Element, PropertyElementType {
                     addSubview(subview, view: view)
 
                 case let property as ElementType & PropertyElementType:
-                    setProperty(property, view: view)
+                    setProperty(property, object: view)
 
                 default:
                     unknownChild(child, view: view)
@@ -78,25 +78,12 @@ class ViewElement: Element, PropertyElementType {
                 view.contentMode = contentMode
 
             default:
-                objc_do({
+                //objc_do({
                         view.setValue(value, forKey: name)
-                    }, { exception in
-                        print(String(describing: exception))
-                    })
+//                    }, { exception in
+//                        print(String(describing: exception))
+//                    })
         }
-    }
-
-    func setProperty(_ property: ElementType & PropertyElementType, view: UIView) {
-        guard let key = property.key else {
-            assertionFailure("Property element expected to have a key: \(property)")
-            return
-        }
-
-        objc_do({
-                view.setValue(property.value, forKey: key)
-            }, { exception in
-                print(String(describing: exception))
-            })
     }
 
     func addSubview(_ subview: ViewElement, view: UIView) {

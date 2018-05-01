@@ -69,10 +69,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window = UIWindow(frame: UIScreen.main.bounds)
 
-        let viewController = EntrypointViewController(style: .plain)
-        let navigationController = UINavigationController(rootViewController: viewController)
+        let parser = Parser(url: Bundle.main.url(forResource: "InitialViewController", withExtension: "xml")!)
 
-        window?.rootViewController = navigationController
+        parser.parse { xmlNode in
+            guard let xmlNode = xmlNode else {
+                return
+            }
+
+            do {
+                let element = try NavigationControllerElement(from: xmlNode)
+                self.window?.rootViewController = element.navigationController
+            }
+            catch {
+                print(error)
+            }
+        }
+
         window?.makeKeyAndVisible()
 
         return true

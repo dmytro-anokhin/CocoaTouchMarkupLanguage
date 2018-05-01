@@ -10,6 +10,11 @@
 		F42872832091EB9900379048 /* CityNames.json in Resources */ = {isa = PBXBuildFile; fileRef = F42872822091EB9900379048 /* CityNames.json */; };
 		F42872852091FC7000379048 /* ObjectControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42872842091FC7000379048 /* ObjectControllerTests.swift */; };
 		F434842920981655009D2D36 /* ViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434842820981655009D2D36 /* ViewControllerBuilder.swift */; };
+		F434842B20982487009D2D36 /* InitialViewController.xml in Resources */ = {isa = PBXBuildFile; fileRef = F434842A20982487009D2D36 /* InitialViewController.xml */; };
+		F434842D20982657009D2D36 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434842C20982657009D2D36 /* NavigationController.swift */; };
+		F434842F209826FC009D2D36 /* NavigationControllerElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434842E209826FC009D2D36 /* NavigationControllerElement.swift */; };
+		F434843120982A6A009D2D36 /* Demos.plist in Resources */ = {isa = PBXBuildFile; fileRef = F434843020982A6A009D2D36 /* Demos.plist */; };
+		F434843420982D87009D2D36 /* ActionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434843320982D87009D2D36 /* ActionElement.swift */; };
 		F45589F82094DCA4007F4703 /* KeyValueBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45589F72094DCA4007F4703 /* KeyValueBinding.swift */; };
 		F45589FB2094DCC4007F4703 /* BindingElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45589FA2094DCC4007F4703 /* BindingElement.swift */; };
 		F45589FD2094E8EC007F4703 /* Countries.xml in Resources */ = {isa = PBXBuildFile; fileRef = F45589FC2094E8EC007F4703 /* Countries.xml */; };
@@ -129,6 +134,11 @@
 		F42872822091EB9900379048 /* CityNames.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CityNames.json; sourceTree = "<group>"; };
 		F42872842091FC7000379048 /* ObjectControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectControllerTests.swift; sourceTree = "<group>"; };
 		F434842820981655009D2D36 /* ViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerBuilder.swift; sourceTree = "<group>"; };
+		F434842A20982487009D2D36 /* InitialViewController.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = InitialViewController.xml; sourceTree = "<group>"; };
+		F434842C20982657009D2D36 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		F434842E209826FC009D2D36 /* NavigationControllerElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerElement.swift; sourceTree = "<group>"; };
+		F434843020982A6A009D2D36 /* Demos.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Demos.plist; sourceTree = "<group>"; };
+		F434843320982D87009D2D36 /* ActionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionElement.swift; sourceTree = "<group>"; };
 		F45589F72094DCA4007F4703 /* KeyValueBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueBinding.swift; sourceTree = "<group>"; };
 		F45589FA2094DCC4007F4703 /* BindingElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingElement.swift; sourceTree = "<group>"; };
 		F45589FC2094E8EC007F4703 /* Countries.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Countries.xml; sourceTree = "<group>"; };
@@ -236,6 +246,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F434843220982D7A009D2D36 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				F434843320982D87009D2D36 /* ActionElement.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
 		F45589F62094DC85007F4703 /* KeyValueBinding */ = {
 			isa = PBXGroup;
 			children = (
@@ -439,6 +457,7 @@
 				F4CB269020947ACB00258410 /* ViewControllerElement */,
 				F4CB26962094846A00258410 /* View */,
 				F4558A0A2095BA28007F4703 /* TableView */,
+				F434843220982D7A009D2D36 /* Actions */,
 			);
 			path = UIKitElements;
 			sourceTree = "<group>";
@@ -455,6 +474,7 @@
 			isa = PBXGroup;
 			children = (
 				F4CB268C20947A8E00258410 /* ViewController.swift */,
+				F434842C20982657009D2D36 /* NavigationController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -464,6 +484,7 @@
 			children = (
 				F4CB269220947AF800258410 /* ViewControllerElementsFactory.swift */,
 				F4CB268E20947AC100258410 /* ViewControllerElement.swift */,
+				F434842E209826FC009D2D36 /* NavigationControllerElement.swift */,
 			);
 			path = ViewControllerElement;
 			sourceTree = "<group>";
@@ -501,6 +522,8 @@
 				F45589FE2094E9AA007F4703 /* countries.json */,
 				F4558A2220962F2E007F4703 /* Festivals.xml */,
 				F4558A2020962F0F007F4703 /* Festivals.json */,
+				F434842A20982487009D2D36 /* InitialViewController.xml */,
+				F434843020982A6A009D2D36 /* Demos.plist */,
 			);
 			path = Templates;
 			sourceTree = "<group>";
@@ -676,8 +699,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F45E79D7209182F1009D5016 /* LaunchScreen.storyboard in Resources */,
+				F434843120982A6A009D2D36 /* Demos.plist in Resources */,
 				F45589FF2094E9AA007F4703 /* countries.json in Resources */,
 				F4CB26A82094AECD00258410 /* SimpleForm.xml in Resources */,
+				F434842B20982487009D2D36 /* InitialViewController.xml in Resources */,
 				F4558A2320962F2E007F4703 /* Festivals.xml in Resources */,
 				F45E79D4209182F1009D5016 /* Assets.xcassets in Resources */,
 				F4CB269D209485E100258410 /* EmptyView.xml in Resources */,
@@ -733,6 +758,7 @@
 				F4CB266E2094650000258410 /* XMLNode.swift in Sources */,
 				F4CB268D20947A8E00258410 /* ViewController.swift in Sources */,
 				F4558A092095B99D007F4703 /* TableViewPrototypesElement.swift in Sources */,
+				F434843420982D87009D2D36 /* ActionElement.swift in Sources */,
 				F4CB269520947BA200258410 /* UIKitElementsFactory.swift in Sources */,
 				F4558A1F209627FA007F4703 /* ImageView.swift in Sources */,
 				F4CB266C209464DE00258410 /* Parser.swift in Sources */,
@@ -750,6 +776,7 @@
 				F4558A0E2095BC02007F4703 /* TableViewCellPrototypeElement.swift in Sources */,
 				F4558A14209612D4007F4703 /* ImageElement.swift in Sources */,
 				F4CB266420944E9300258410 /* KeyValueCoding.swift in Sources */,
+				F434842D20982657009D2D36 /* NavigationController.swift in Sources */,
 				F4CB267920946CF100258410 /* ElementType.swift in Sources */,
 				F45E7A0420918471009D5016 /* ObjectController.swift in Sources */,
 				F4CB26B72094C7FF00258410 /* UILayoutConstraintAxis+String.swift in Sources */,
@@ -774,6 +801,7 @@
 				F4CB267F20946E6C00258410 /* Element.swift in Sources */,
 				F4CB26AF2094B6A400258410 /* Keyword.swift in Sources */,
 				F4558A102095C206007F4703 /* TableViewCell.swift in Sources */,
+				F434842F209826FC009D2D36 /* NavigationControllerElement.swift in Sources */,
 				F4CB268120946FDA00258410 /* PropertyElement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

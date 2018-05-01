@@ -17,6 +17,14 @@ class UIKitElementsFactory: ElementsFactory {
             case "font":
                 return try FontElement(from: xmlNode)
 
+
+            case "viewController":
+                return try ViewControllerElement(from: xmlNode)
+
+            case "navigationController":
+                return try NavigationControllerElement(from: xmlNode)
+
+
             case "view":
                 return try ViewElement(from: xmlNode)
 
@@ -28,6 +36,11 @@ class UIKitElementsFactory: ElementsFactory {
 
             case "textField":
                 return try TextFieldElement(from: xmlNode)
+
+
+            case "action":
+                return try ActionElement(from: xmlNode)
+
 
             default:
                 return try super.element(for: xmlNode)

@@ -12,7 +12,6 @@ import Foundation
 class BundleResourceElement: Element, PropertyElementType {
 
     var value: Any? {
-
         guard let name = attributes["name"] else {
             assertionFailure("Bundle resource element requires resource name attribute")
             return nil

@@ -65,11 +65,41 @@ class TableView: UITableView, UITableViewDataSource, UITableViewDelegate {
 
         return cell
     }
-//
-//    // MARK: UITableViewDelegate
-//
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-////        let cell = tableView.cellForRow(at: indexPath) as! TableViewCell
-////        (cell.representedObject as ObjectController)?["number"] = "Hello, world!"
-//    }
+
+    // MARK: UITableViewDelegate
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! TableViewCell
+        let element = cellToElementMap[cell]!
+
+        for case let action as ActionElement in element.children {
+            let row = rows![indexPath.row] as! String
+
+            let parser = Parser(url: Bundle.main.url(forResource: row, withExtension: "xml")!)
+
+            parser.parse { xmlNode in
+                var builder = ViewControllerBuilder()
+                builder.xmlNode = xmlNode
+
+                do {
+                    let viewController = try builder.build()
+
+                    var responder: UIResponder? = self
+                    while responder != nil {
+                        responder = responder?.next
+
+                        if let navigationController = responder as? UINavigationController {
+                            navigationController.pushViewController(viewController, animated: true)
+                            break
+                        }
+                    }
+                }
+                catch {
+                    print(error)
+                }
+            }
+
+            break
+        }
+    }
 }

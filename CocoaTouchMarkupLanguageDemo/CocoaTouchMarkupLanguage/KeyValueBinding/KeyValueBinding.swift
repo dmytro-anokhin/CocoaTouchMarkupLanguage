@@ -62,12 +62,8 @@ func connect(viewElement rootViewElement: ViewElement, objectController: ObjectC
 
         var subviewElements: [ViewElement] = []
 
-        for element in viewElement.children {
-            guard let subviewElement = element as? ViewElement else {
-                continue
-            }
-
-            subviewElements.append(subviewElement)
+        for case let element as ViewElement in viewElement.children {
+            subviewElements.append(element)
         }
 
         viewElements.append(contentsOf: subviewElements)
