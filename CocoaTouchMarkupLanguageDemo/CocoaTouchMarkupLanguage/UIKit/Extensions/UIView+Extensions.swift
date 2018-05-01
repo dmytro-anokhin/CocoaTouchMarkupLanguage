@@ -96,6 +96,7 @@ extension UIView {
 
     private func activateConstraint(withIdentifier identifier: String, affectingLayoutFor axis: UILayoutConstraintAxis, relation: NSLayoutRelation, constant: CGFloat) {
         let constraint = NSLayoutConstraint(item: self, attribute: axis == .horizontal ? .width : .height, relatedBy: relation, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: constant)
+        constraint.priority = UILayoutPriority.required - 1.0
         constraint.isActive = true
     }
 
