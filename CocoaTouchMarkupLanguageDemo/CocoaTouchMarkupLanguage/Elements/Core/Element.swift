@@ -63,11 +63,11 @@ public class Element: ElementType, XMLDecodable {
             return
         }
 
-        objc_do({
+        //objc_do({
                 object.setValue(property.value, forKey: key)
-            }, { exception in
-                print(String(describing: exception))
-            })
+//            }, { exception in
+//                print(String(describing: exception))
+//            })
     }
 }
 

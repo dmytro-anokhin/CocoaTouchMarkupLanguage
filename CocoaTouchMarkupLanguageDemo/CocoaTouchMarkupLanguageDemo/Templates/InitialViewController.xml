@@ -7,9 +7,10 @@
 
             <prototypes>
                 <tableViewCell relativeToMargins="true">
-                    <view className="UILabel">
+                    <label>
                         <binding name="text" keyPath="self"/>
-                    </view>
+                        <color key="backgroundColor" red="1.0" green="1.0" blue="1.0" alpha="1.0" colorSpace="rgb"/>
+                    </label>
 
                     <action kind="show">
                         <argument name="CTMLViewControllerName" keyPath="self"/>

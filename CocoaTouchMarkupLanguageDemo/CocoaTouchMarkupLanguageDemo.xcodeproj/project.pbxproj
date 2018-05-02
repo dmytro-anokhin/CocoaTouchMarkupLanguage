@@ -56,6 +56,7 @@
 		F495A3F32098DFC400FB377B /* ScrollViewElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F495A3F22098DFC400FB377B /* ScrollViewElement.swift */; };
 		F495A3F52098E08600FB377B /* ScrollViewPrototypeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F495A3F42098E08600FB377B /* ScrollViewPrototypeElement.swift */; };
 		F495A3F72098E4C500FB377B /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = F495A3F62098E4C500FB377B /* Label.swift */; };
+		F495A3F9209A1A9000FB377B /* LabelElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F495A3F8209A1A9000FB377B /* LabelElement.swift */; };
 		F4AAC2E02098D7BC00F798B1 /* FestivalDetails.xml in Resources */ = {isa = PBXBuildFile; fileRef = F4AAC2DF2098D7BC00F798B1 /* FestivalDetails.xml */; };
 		F4CB26552092767900258410 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CB26542092767900258410 /* Data+Extensions.swift */; };
 		F4CB265720927F8800258410 /* Amsterdam.json in Resources */ = {isa = PBXBuildFile; fileRef = F4CB265620927F8800258410 /* Amsterdam.json */; };
@@ -190,6 +191,7 @@
 		F495A3F22098DFC400FB377B /* ScrollViewElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewElement.swift; sourceTree = "<group>"; };
 		F495A3F42098E08600FB377B /* ScrollViewPrototypeElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewPrototypeElement.swift; sourceTree = "<group>"; };
 		F495A3F62098E4C500FB377B /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		F495A3F8209A1A9000FB377B /* LabelElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelElement.swift; sourceTree = "<group>"; };
 		F4AAC2DF2098D7BC00F798B1 /* FestivalDetails.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FestivalDetails.xml; sourceTree = "<group>"; };
 		F4CB26542092767900258410 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		F4CB265620927F8800258410 /* Amsterdam.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Amsterdam.json; sourceTree = "<group>"; };
@@ -466,7 +468,6 @@
 				F4CB269020947ACB00258410 /* ViewControllerElement */,
 				F4CB26962094846A00258410 /* View */,
 				F4558A0A2095BA28007F4703 /* TableView */,
-				F434843220982D7A009D2D36 /* Actions */,
 			);
 			path = UIKitElements;
 			sourceTree = "<group>";
@@ -519,6 +520,7 @@
 				F4CB26C62094DA3200258410 /* TextFieldElement.swift */,
 				F495A3F22098DFC400FB377B /* ScrollViewElement.swift */,
 				F495A3F42098E08600FB377B /* ScrollViewPrototypeElement.swift */,
+				F495A3F8209A1A9000FB377B /* LabelElement.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -810,6 +812,7 @@
 				F4CB266620944EAA00258410 /* LooseKeyValueObservableDelegating.swift in Sources */,
 				F4CB26C02094D05D00258410 /* BundleResourceElement.swift in Sources */,
 				F4CB266220944D1100258410 /* KeyValueObserverRegistration.swift in Sources */,
+				F495A3F9209A1A9000FB377B /* LabelElement.swift in Sources */,
 				F4CB267D20946E0100258410 /* XMLDecodable.swift in Sources */,
 				F4558A072095B89B007F4703 /* TableViewElementsFactory.swift in Sources */,
 				F4CB26C72094DA3200258410 /* TextFieldElement.swift in Sources */,

@@ -15,15 +15,17 @@
 
                     <view className="ContainerView" alignment="leading" relativeToMargins="true">
                         <stackView key="contentView" axis="vertical" spacing="8.0">
-                            <view className="UILabel" numberOfLines="2">
+                            <label numberOfLines="2">
                                 <binding name="text" keyPath="title"/>
                                 <font key="font" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                            </view>
+                                <color key="backgroundColor" red="1.0" green="1.0" blue="1.0" alpha="1.0" colorSpace="rgb"/>
+                            </label>
 
-                            <view className="UILabel" numberOfLines="4">
+                            <label numberOfLines="4">
                                 <binding name="text" keyPath="details.en.shortdescription"/>
                                 <font key="font" type="system" pointSize="15"/>
-                            </view>
+                                <color key="backgroundColor" red="1.0" green="1.0" blue="1.0" alpha="1.0" colorSpace="rgb"/>
+                            </label>
                         </stackView>
                     </view>
                 </stackView>

@@ -37,6 +37,9 @@ class UIKitElementsFactory: ElementsFactory {
             case "stackView":
                 return try StackViewElement(from: xmlNode)
 
+            case "label":
+                return try LabelElement(from: xmlNode)
+
             case "textField":
                 return try TextFieldElement(from: xmlNode)
 

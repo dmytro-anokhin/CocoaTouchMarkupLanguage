@@ -12,9 +12,9 @@
                     <view className="ImageView" width="40.0" height="40.0">
                         <binding name="imagePath" keyPath="imagePath"/>
                     </view>
-                    <view className="UILabel">
+                    <label>
                         <binding name="text" keyPath="name"/>
-                    </view>
+                    </label>
                 </stackView>
             </tableViewCell>
         </prototypes>

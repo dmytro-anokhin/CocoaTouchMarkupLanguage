@@ -6,13 +6,13 @@
         <color key="backgroundColor" red="0.2" green="0.4" blue="0.4" alpha="1.0" colorSpace="rgb"/>
         <stackView key="contentView" axis="vertical" spacing="8.0" alignment="center">
             <stackView>
-                <view className="UILabel" text="Hello, ">
+                <label text="Hello, ">
                     <color key="textColor" red="1.0" green="1.0" blue="1.0" alpha="1.0" colorSpace="rgb"/>
-                </view>
-                <view className="UILabel">
+                </label>
+                <label>
                     <color key="textColor" red="1.0" green="1.0" blue="1.0" alpha="1.0" colorSpace="rgb"/>
                     <binding name="text" keyPath="model.name"/>
-                </view>
+                </label>
             </stackView>
             <textField placeholder="Your Name">
                 <binding name="text" keyPath="model.name"/>
