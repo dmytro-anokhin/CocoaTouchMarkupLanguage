@@ -12,9 +12,8 @@
                     </view>
 
                     <action kind="show">
-                        <viewController>
-                            <binding name="name" keyPath="self"/>
-                        </viewController>
+                        <argument name="CTMLViewControllerName" keyPath="self"/>
+                        <argument name="title" keyPath="self"/>
                     </action>
 
                 </tableViewCell>

@@ -1,5 +1,9 @@
 <viewController>
+
+    <binding name="title" keyPath="arguments.title"/>
+
     <view>
         <color key="backgroundColor" red="0.2" green="0.4" blue="0.4" alpha="1.0" colorSpace="rgb"/>
     </view>
+
 </viewController>

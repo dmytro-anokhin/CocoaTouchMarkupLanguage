@@ -9,14 +9,19 @@
 import UIKit
 
 
-class ViewController: UIViewController {
+public class ViewController: UIViewController {
 
     var viewPrototypeElement: ViewPrototypeElement?
-    var objectControllerElement: ObjectControllerElement?
+
+    var objectControllerElement: ObjectControllerElement? {
+        didSet {
+            representedObject = objectControllerElement?.objectController
+        }
+    }
 
     private var viewElement: ViewElement?
 
-    override func loadView() {
+    public override func loadView() {
         guard let viewPrototypeElement = viewPrototypeElement else {
             assertionFailure("ViewController must have a prototype")
             super.loadView()
@@ -28,18 +33,18 @@ class ViewController: UIViewController {
         self.viewElement = viewElement
     }
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
-        representedObject = objectControllerElement?.objectController
 
         if let viewElement = viewElement,
            let objectController = representedObject
         {
-            bindingTokens = connect(viewElement: viewElement, objectController: objectController)
+            let tokens = connect(viewElement: viewElement, objectController: objectController)
+            bindingTokens.append(contentsOf: tokens)
         }
     }
 
     var representedObject: ObjectController?
 
-    private var bindingTokens: [ObservationTokenType]?
+    var bindingTokens: [ObservationTokenType] = []
 }

@@ -14,6 +14,9 @@ class ViewControllerElementsFactory: UIKitElementsFactory {
             case "view":
                 return try ViewPrototypeElement(from: xmlNode)
 
+            case "scrollView":
+                return try ScrollViewPrototypeElement(from: xmlNode)
+
             case "tableView":
                 return try TableViewPrototypeElement(from: xmlNode)
 

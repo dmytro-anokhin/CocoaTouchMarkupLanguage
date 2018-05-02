@@ -1,5 +1,7 @@
 <viewController>
 
+    <binding name="title" keyPath="arguments.title"/>
+
     <tableView>
 
         <binding name="rows" keyPath="festivals"/>
@@ -25,6 +27,12 @@
                         </stackView>
                     </view>
                 </stackView>
+
+                <action kind="show">
+                    <argument name="CTMLViewControllerName" value="FestivalDetails"/>
+                    <argument name="festival" keyPath="self"/>
+                </action>
+
             </tableViewCell>
         </prototypes>
 

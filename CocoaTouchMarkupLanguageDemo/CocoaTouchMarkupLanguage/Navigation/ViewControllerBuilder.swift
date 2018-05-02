@@ -20,7 +20,7 @@ public struct ViewControllerBuilder {
 
     public var xmlNode: XMLNode?
 
-    public var arguments: [String: Any] = [:]
+    public var arguments: [String: Any?] = [:]
 
     public init() {
     }
@@ -33,6 +33,13 @@ public struct ViewControllerBuilder {
         do {
             let element = try ViewControllerElement(from: xmlNode)
             let viewController = element.viewController
+
+            viewController.representedObject?.setValue((arguments as NSDictionary).mutableCopy(), forKey: "arguments")
+
+            if let objectController = viewController.representedObject {
+                let tokens = connect(viewControllerElement: element, objectController: objectController)
+                viewController.bindingTokens = tokens
+            }
 
             return viewController
         }

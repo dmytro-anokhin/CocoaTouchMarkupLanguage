@@ -9,6 +9,32 @@
 import UIKit
 
 
+// MARK: - UIViewController
+
+extension UIView {
+
+    var viewController: UIViewController? {
+        var responder: UIResponder? = self
+
+        while responder != nil {
+            if let viewController = responder as? UIViewController {
+                return viewController
+            }
+
+            responder = responder?.next
+        }
+
+        return nil
+    }
+
+    func targetViewController(forAction action: Selector, sender: Any?) -> UIViewController? {
+        return viewController?.targetViewController(forAction: action, sender: sender)
+    }
+}
+
+
+// MARK: - Width and Height constraints
+
 let widthIdentifier = "CocoaTouchMarkupLanguage.Width"
 let heightIdentifier = "CocoaTouchMarkupLanguage.Height"
 
@@ -88,7 +114,6 @@ extension UIView {
             activateConstraint(withIdentifier: heightIdentifier, affectingLayoutFor: .vertical, relation: .lessThanOrEqual, constant: newValue)
         }
     }
-
 
     private func deactivateConstraint(withIdentifier identifier: String, affectingLayoutFor axis: UILayoutConstraintAxis, relation: NSLayoutRelation) {
         constraint(withIdentifier: identifier, affectingLayoutFor: axis, relation: relation)?.isActive = false

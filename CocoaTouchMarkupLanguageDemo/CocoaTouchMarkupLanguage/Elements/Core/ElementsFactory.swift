@@ -29,6 +29,12 @@ class ElementsFactory: ElementsFactoryType {
             case "binding":
                 return try BindingElement(from: xmlNode)
 
+            case "action":
+                return try ActionElement(from: xmlNode)
+
+            case "argument":
+                return try ArgumentElement(from: xmlNode)
+
             default:
                 return try Element(from: xmlNode)
         }

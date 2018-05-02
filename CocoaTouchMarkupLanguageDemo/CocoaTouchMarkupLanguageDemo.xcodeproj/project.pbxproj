@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		F42872832091EB9900379048 /* CityNames.json in Resources */ = {isa = PBXBuildFile; fileRef = F42872822091EB9900379048 /* CityNames.json */; };
 		F42872852091FC7000379048 /* ObjectControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42872842091FC7000379048 /* ObjectControllerTests.swift */; };
+		F432A2AB2098910300FB439F /* ArgumentElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F432A2AA2098910300FB439F /* ArgumentElement.swift */; };
+		F432A2AD2098949400FB439F /* Arguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = F432A2AC2098949400FB439F /* Arguments.swift */; };
 		F434842920981655009D2D36 /* ViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434842820981655009D2D36 /* ViewControllerBuilder.swift */; };
 		F434842B20982487009D2D36 /* InitialViewController.xml in Resources */ = {isa = PBXBuildFile; fileRef = F434842A20982487009D2D36 /* InitialViewController.xml */; };
 		F434842D20982657009D2D36 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434842C20982657009D2D36 /* NavigationController.swift */; };
@@ -50,6 +52,11 @@
 		F45E7A0D209185A0009D5016 /* ArrayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45E7A0C209185A0009D5016 /* ArrayController.swift */; };
 		F45E7A102091877F009D5016 /* CityNames.plist in Resources */ = {isa = PBXBuildFile; fileRef = F45E7A0F2091877F009D5016 /* CityNames.plist */; };
 		F45E7A1320918AE5009D5016 /* ObjectController+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45E7A1220918AE5009D5016 /* ObjectController+JSON.swift */; };
+		F495A3F12098DF6400FB377B /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F495A3F02098DF6400FB377B /* ScrollView.swift */; };
+		F495A3F32098DFC400FB377B /* ScrollViewElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F495A3F22098DFC400FB377B /* ScrollViewElement.swift */; };
+		F495A3F52098E08600FB377B /* ScrollViewPrototypeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F495A3F42098E08600FB377B /* ScrollViewPrototypeElement.swift */; };
+		F495A3F72098E4C500FB377B /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = F495A3F62098E4C500FB377B /* Label.swift */; };
+		F4AAC2E02098D7BC00F798B1 /* FestivalDetails.xml in Resources */ = {isa = PBXBuildFile; fileRef = F4AAC2DF2098D7BC00F798B1 /* FestivalDetails.xml */; };
 		F4CB26552092767900258410 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CB26542092767900258410 /* Data+Extensions.swift */; };
 		F4CB265720927F8800258410 /* Amsterdam.json in Resources */ = {isa = PBXBuildFile; fileRef = F4CB265620927F8800258410 /* Amsterdam.json */; };
 		F4CB265E2093BEE600258410 /* ObservationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CB265D2093BEE600258410 /* ObservationController.swift */; };
@@ -133,6 +140,8 @@
 /* Begin PBXFileReference section */
 		F42872822091EB9900379048 /* CityNames.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CityNames.json; sourceTree = "<group>"; };
 		F42872842091FC7000379048 /* ObjectControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectControllerTests.swift; sourceTree = "<group>"; };
+		F432A2AA2098910300FB439F /* ArgumentElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgumentElement.swift; sourceTree = "<group>"; };
+		F432A2AC2098949400FB439F /* Arguments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arguments.swift; sourceTree = "<group>"; };
 		F434842820981655009D2D36 /* ViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerBuilder.swift; sourceTree = "<group>"; };
 		F434842A20982487009D2D36 /* InitialViewController.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = InitialViewController.xml; sourceTree = "<group>"; };
 		F434842C20982657009D2D36 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
@@ -177,6 +186,11 @@
 		F45E7A0C209185A0009D5016 /* ArrayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayController.swift; sourceTree = "<group>"; };
 		F45E7A0F2091877F009D5016 /* CityNames.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CityNames.plist; sourceTree = "<group>"; };
 		F45E7A1220918AE5009D5016 /* ObjectController+JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObjectController+JSON.swift"; sourceTree = "<group>"; };
+		F495A3F02098DF6400FB377B /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
+		F495A3F22098DFC400FB377B /* ScrollViewElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewElement.swift; sourceTree = "<group>"; };
+		F495A3F42098E08600FB377B /* ScrollViewPrototypeElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewPrototypeElement.swift; sourceTree = "<group>"; };
+		F495A3F62098E4C500FB377B /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		F4AAC2DF2098D7BC00F798B1 /* FestivalDetails.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FestivalDetails.xml; sourceTree = "<group>"; };
 		F4CB26542092767900258410 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		F4CB265620927F8800258410 /* Amsterdam.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Amsterdam.json; sourceTree = "<group>"; };
 		F4CB265D2093BEE600258410 /* ObservationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationController.swift; sourceTree = "<group>"; };
@@ -246,26 +260,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F434843220982D7A009D2D36 /* Actions */ = {
-			isa = PBXGroup;
-			children = (
-				F434843320982D87009D2D36 /* ActionElement.swift */,
-			);
-			path = Actions;
-			sourceTree = "<group>";
-		};
-		F45589F62094DC85007F4703 /* KeyValueBinding */ = {
+		F45589F62094DC85007F4703 /* KeyValueCoding */ = {
 			isa = PBXGroup;
 			children = (
 				F45589F72094DCA4007F4703 /* KeyValueBinding.swift */,
+				F432A2AC2098949400FB439F /* Arguments.swift */,
 			);
-			path = KeyValueBinding;
+			path = KeyValueCoding;
 			sourceTree = "<group>";
 		};
 		F45589F92094DCAC007F4703 /* Other */ = {
 			isa = PBXGroup;
 			children = (
 				F45589FA2094DCC4007F4703 /* BindingElement.swift */,
+				F434843320982D87009D2D36 /* ActionElement.swift */,
+				F432A2AA2098910300FB439F /* ArgumentElement.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -326,7 +335,7 @@
 		F45E79E420918308009D5016 /* CocoaTouchMarkupLanguage */ = {
 			isa = PBXGroup;
 			children = (
-				F45589F62094DC85007F4703 /* KeyValueBinding */,
+				F45589F62094DC85007F4703 /* KeyValueCoding */,
 				F4CB267520946C8C00258410 /* Elements */,
 				F4CB266A209464B700258410 /* XMLParser */,
 				F45E7A0220918448009D5016 /* ObjectController */,
@@ -508,6 +517,8 @@
 				F4CB26972094849C00258410 /* ViewElement.swift */,
 				F4CB26BA2094C87100258410 /* StackViewElement.swift */,
 				F4CB26C62094DA3200258410 /* TextFieldElement.swift */,
+				F495A3F22098DFC400FB377B /* ScrollViewElement.swift */,
+				F495A3F42098E08600FB377B /* ScrollViewPrototypeElement.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -522,6 +533,7 @@
 				F45589FE2094E9AA007F4703 /* countries.json */,
 				F4558A2220962F2E007F4703 /* Festivals.xml */,
 				F4558A2020962F0F007F4703 /* Festivals.json */,
+				F4AAC2DF2098D7BC00F798B1 /* FestivalDetails.xml */,
 				F434842A20982487009D2D36 /* InitialViewController.xml */,
 				F434843020982A6A009D2D36 /* Demos.plist */,
 			);
@@ -550,6 +562,8 @@
 				F4558A042094F0FC007F4703 /* TableView.swift */,
 				F4558A0F2095C206007F4703 /* TableViewCell.swift */,
 				F4558A1E209627FA007F4703 /* ImageView.swift */,
+				F495A3F02098DF6400FB377B /* ScrollView.swift */,
+				F495A3F62098E4C500FB377B /* Label.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -705,6 +719,7 @@
 				F434842B20982487009D2D36 /* InitialViewController.xml in Resources */,
 				F4558A2320962F2E007F4703 /* Festivals.xml in Resources */,
 				F45E79D4209182F1009D5016 /* Assets.xcassets in Resources */,
+				F4AAC2E02098D7BC00F798B1 /* FestivalDetails.xml in Resources */,
 				F4CB269D209485E100258410 /* EmptyView.xml in Resources */,
 				F4CB26BD2094CF5000258410 /* SimpleFormData.json in Resources */,
 				F45589FD2094E8EC007F4703 /* Countries.xml in Resources */,
@@ -754,6 +769,7 @@
 				F4CB269F2094885500258410 /* ViewPrototypeElement.swift in Sources */,
 				F4CB26B92094C81F00258410 /* UIStackView+String.swift in Sources */,
 				F4558A052094F0FC007F4703 /* TableView.swift in Sources */,
+				F495A3F52098E08600FB377B /* ScrollViewPrototypeElement.swift in Sources */,
 				F4558A1B209617EA007F4703 /* UIView+Extensions.swift in Sources */,
 				F4CB266E2094650000258410 /* XMLNode.swift in Sources */,
 				F4CB268D20947A8E00258410 /* ViewController.swift in Sources */,
@@ -761,6 +777,7 @@
 				F434843420982D87009D2D36 /* ActionElement.swift in Sources */,
 				F4CB269520947BA200258410 /* UIKitElementsFactory.swift in Sources */,
 				F4558A1F209627FA007F4703 /* ImageView.swift in Sources */,
+				F495A3F72098E4C500FB377B /* Label.swift in Sources */,
 				F4CB266C209464DE00258410 /* Parser.swift in Sources */,
 				F4CB26C52094D7C100258410 /* TextField.swift in Sources */,
 				F45E7A0D209185A0009D5016 /* ArrayController.swift in Sources */,
@@ -769,6 +786,7 @@
 				F4CB268F20947AC100258410 /* ViewControllerElement.swift in Sources */,
 				F4CB269A209484B100258410 /* ViewElementsFactory.swift in Sources */,
 				F4558A122095F213007F4703 /* ElementPrototype.swift in Sources */,
+				F495A3F12098DF6400FB377B /* ScrollView.swift in Sources */,
 				F4558A0C2095BBF2007F4703 /* TableViewCellElement.swift in Sources */,
 				F45589F82094DCA4007F4703 /* KeyValueBinding.swift in Sources */,
 				F4CB26A42094A81C00258410 /* DoTryCatch.m in Sources */,
@@ -781,6 +799,8 @@
 				F45E7A0420918471009D5016 /* ObjectController.swift in Sources */,
 				F4CB26B72094C7FF00258410 /* UILayoutConstraintAxis+String.swift in Sources */,
 				F4CB26982094849C00258410 /* ViewElement.swift in Sources */,
+				F432A2AB2098910300FB439F /* ArgumentElement.swift in Sources */,
+				F495A3F32098DFC400FB377B /* ScrollViewElement.swift in Sources */,
 				F4CB26602094490A00258410 /* ObservationToken.swift in Sources */,
 				F4558A2920963487007F4703 /* FontElement.swift in Sources */,
 				F434842920981655009D2D36 /* ViewControllerBuilder.swift in Sources */,
@@ -795,6 +815,7 @@
 				F4CB26C72094DA3200258410 /* TextFieldElement.swift in Sources */,
 				F4558A2720962FCD007F4703 /* NSArray+KeyValueCodingOperations.m in Sources */,
 				F4CB26722094659900258410 /* XMLNode+Debugging.swift in Sources */,
+				F432A2AD2098949400FB439F /* Arguments.swift in Sources */,
 				F4558A1D20961AFF007F4703 /* UIView+String.swift in Sources */,
 				F4CB26BB2094C87100258410 /* StackViewElement.swift in Sources */,
 				F4558A012094EAB0007F4703 /* TableViewElement.swift in Sources */,

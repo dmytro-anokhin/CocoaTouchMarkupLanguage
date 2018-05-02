@@ -73,25 +73,36 @@ class TableView: UITableView, UITableViewDataSource, UITableViewDelegate {
         let element = cellToElementMap[cell]!
 
         for case let action as ActionElement in element.children {
-            let row = rows![indexPath.row] as! String
+            guard let objectController = cell.representedObject else {
+                assertionFailure("Object controller is required to perform an action")
+                return
+            }
 
-            let parser = Parser(url: Bundle.main.url(forResource: row, withExtension: "xml")!)
+            let allArguments = argumentsDictionary(for: action, objectController: objectController)
+            let arguments = allArguments.filter { !$0.0.hasPrefix("CTML") }
+
+            guard let viewControllerName = allArguments["CTMLViewControllerName"] as? String else {
+                assertionFailure("View controller is required to perform an action")
+                return
+            }
+
+            guard let url = Bundle.main.url(forResource: viewControllerName, withExtension: "xml") else {
+                assertionFailure("View controller \(viewControllerName) not found in the main bundle")
+                return
+            }
+
+            let parser = Parser(url: url)
 
             parser.parse { xmlNode in
                 var builder = ViewControllerBuilder()
                 builder.xmlNode = xmlNode
+                builder.arguments = arguments
 
                 do {
                     let viewController = try builder.build()
 
-                    var responder: UIResponder? = self
-                    while responder != nil {
-                        responder = responder?.next
-
-                        if let navigationController = responder as? UINavigationController {
-                            navigationController.pushViewController(viewController, animated: true)
-                            break
-                        }
+                    if let targetViewController = self.targetViewController(forAction: #selector(UIViewController.show(_:sender:)), sender: self) {
+                        targetViewController.show(viewController, sender: self)
                     }
                 }
                 catch {

@@ -1,5 +1,7 @@
 <viewController>
 
+    <binding name="title" keyPath="arguments.title"/>
+
     <tableView>
 
         <binding name="rows" keyPath="model.countries"/>

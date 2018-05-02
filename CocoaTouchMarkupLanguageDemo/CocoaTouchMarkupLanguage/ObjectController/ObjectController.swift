@@ -54,6 +54,10 @@ extension ObjectController: KeyValueObserverRegistration {
 extension ObjectController: KeyValueCoding {
 
     public func value(forKey key: String) -> Any? {
+        if key == "self" {
+            return content
+        }
+        
         return content.value(forKeyPath: key)
     }
 

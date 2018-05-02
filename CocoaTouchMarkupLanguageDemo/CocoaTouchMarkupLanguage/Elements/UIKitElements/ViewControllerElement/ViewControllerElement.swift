@@ -19,7 +19,7 @@ public class ViewControllerElement: Element, PropertyElementType {
         return ViewControllerElementsFactory()
     }
 
-    public lazy var viewController: UIViewController = {
+    public lazy var viewController: ViewController = {
         let viewController = ViewController(nibName: nil, bundle: nil)
 
         viewController.viewPrototypeElement = children.first { $0 is ViewPrototypeElement } as? ViewPrototypeElement

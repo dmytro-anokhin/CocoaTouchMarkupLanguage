@@ -28,6 +28,9 @@ class UIKitElementsFactory: ElementsFactory {
             case "view":
                 return try ViewElement(from: xmlNode)
 
+            case "scrollView":
+                return try ScrollViewElement(from: xmlNode)
+
             case "tableView":
                 return try TableViewElement(from: xmlNode)
 
