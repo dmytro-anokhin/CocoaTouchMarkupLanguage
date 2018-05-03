@@ -7,8 +7,8 @@
         <binding name="rows" keyPath="festivals"/>
 
         <prototypes>
-            <tableViewCell relativeToMargins="false">
-                <stackView axis="vertical">
+            <tableViewCell relativeToMargins="false" horizontalAlignment="leading">
+                <stackView key="managedView" axis="vertical">
                     <view className="ImageView" height="80.0" contentMode="scaleAspectFill" clipsToBounds="true">
                         <binding name="imageURL" keyPath="media.@first.url"/>
                     </view>

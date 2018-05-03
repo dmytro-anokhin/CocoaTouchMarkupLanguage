@@ -6,8 +6,9 @@
             <binding name="rows" keyPath="demos"/>
 
             <prototypes>
-                <tableViewCell relativeToMargins="true">
-                    <label>
+                <tableViewCell relativeToMargins="true" horizontalAlignment="leading">
+
+                    <label key="managedView">
                         <binding name="text" keyPath="self"/>
                         <color key="backgroundColor" red="1.0" green="1.0" blue="1.0" alpha="1.0" colorSpace="rgb"/>
                     </label>

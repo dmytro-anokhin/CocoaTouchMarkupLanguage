@@ -45,42 +45,11 @@ class ContainerView: UIView, ContainerViewType {
     }
 
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
-        switch key {
-            case "alignment":
-                if let value = value as? String {
-                    let alignment = ContainerViewAlignment(string: value)
-                    self.horizontalAlignment = alignment
-                    self.verticalAlignment = alignment
-                }
-                else {
-                    self.horizontalAlignment = .default
-                    self.verticalAlignment = .default
-                }
-
-            case "horizontalAlignment":
-                if let value = value as? String {
-                    self.horizontalAlignment = ContainerViewAlignment(string: value)
-                }
-                else {
-                    self.horizontalAlignment = .default
-                }
-
-            case "verticalAlignment":
-                if let value = value as? String {
-                    self.verticalAlignment = ContainerViewAlignment(string: value)
-                }
-                else {
-                    self.verticalAlignment = .default
-                }
-
-            case "managedView":
-                managedView = value as? UIView
-
-            case "relativeToMargins":
-                relativeToMargins = (value as? NSString)?.boolValue ?? false
-
-            default:
-                super.setValue(value, forUndefinedKey: key)
+        if set(value: value, forKey: key) {
+            // noop
+        }
+        else {
+            super.setValue(value, forUndefinedKey: key)
         }
     }
 

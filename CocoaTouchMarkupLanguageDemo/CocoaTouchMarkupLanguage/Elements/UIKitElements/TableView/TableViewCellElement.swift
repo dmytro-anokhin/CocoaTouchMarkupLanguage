@@ -35,11 +35,11 @@ class TableViewCellElement: ViewElement {
             return
         }
 
-        if let cell = cell as? TableViewCell {
-            cell.addArrangedSubview(subview.view)
-        }
-        else {
+//        if let cell = cell as? TableViewCell {
+//            cell.addContainerSubview(subview.view)
+//        }
+//        else {
             cell.contentView.addSubview(subview.view)
-        }
+//        }
     }
 }

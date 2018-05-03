@@ -7,8 +7,8 @@
         <binding name="rows" keyPath="model.countries"/>
 
         <prototypes>
-            <tableViewCell relativeToMargins="true">
-                <stackView axis="horizontal" spacing="16.0" alignment="center">
+            <tableViewCell relativeToMargins="true" horizontalAlignment="leading">
+                <stackView key="managedView" axis="horizontal" spacing="16.0" alignment="center">
                     <view className="ImageView" width="40.0" height="40.0">
                         <binding name="imagePath" keyPath="imagePath"/>
                     </view>

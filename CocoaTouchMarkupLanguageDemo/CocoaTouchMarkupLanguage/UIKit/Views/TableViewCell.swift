@@ -7,58 +7,86 @@
 //
 
 
-class TableViewCell: UITableViewCell {
+class TableViewCell: UITableViewCell, ContainerViewType {
+
+    @objc var managedView: UIView? {
+        get {
+            return containerView.managedView
+        }
+
+        set {
+            containerView.managedView = newValue
+        }
+    }
+
+    var horizontalAlignment: ContainerViewAlignment {
+        get {
+            return containerView.horizontalAlignment
+        }
+
+        set {
+            containerView.horizontalAlignment = newValue
+        }
+    }
+
+    var verticalAlignment: ContainerViewAlignment {
+        get {
+            return containerView.verticalAlignment
+        }
+
+        set {
+            containerView.verticalAlignment = newValue
+        }
+    }
+
+    var relativeToMargins: Bool {
+        get {
+            return containerView.relativeToMargins
+        }
+
+        set {
+            containerView.relativeToMargins = newValue
+        }
+    }
+
+    override func setValue(_ value: Any?, forUndefinedKey key: String) {
+        if set(value: value, forKey: key) {
+            // noop
+        }
+        else {
+            super.setValue(value, forUndefinedKey: key)
+        }
+    }
 
     override class var requiresConstraintBasedLayout: Bool {
         return true
     }
 
-    private var currentConstraints: [NSLayoutConstraint]?
+    private let containerView: ContainerView!
 
-    private var stackView: UIStackView?
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        containerView = ContainerView()
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-    func addArrangedSubview(_ view: UIView) {
-        view.translatesAutoresizingMaskIntoConstraints = false
-
-        if stackView == nil {
-            stackView = UIStackView()
-            stackView?.axis = .vertical
-            stackView?.translatesAutoresizingMaskIntoConstraints = false
-            contentView.addSubview(stackView!)
-        }
-
-        stackView?.addArrangedSubview(view)
-    }
-
-    @objc var relativeToMargins: Bool = false {
-        didSet {
-            setNeedsUpdateConstraints()
-        }
-    }
-
-    override func updateConstraints() {
-        super.updateConstraints()
-
-        if let constraints = currentConstraints {
-            NSLayoutConstraint.deactivate(constraints)
-            currentConstraints = nil
-        }
-
-        guard let stackView = stackView else {
-            return
-        }
-
-        let margins = relativeToMargins ? layoutMargins : .zero
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(containerView)
 
         let constraints = [
-            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: margins.top),
-            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: margins.left),
-            stackView.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -1.0 * margins.bottom),
-            stackView.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: -1.0 * margins.right)
+            containerView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ]
 
+        for constraint in constraints {
+            constraint.priority = UILayoutPriority.required - 1.0 // Prevent broken constraints with self sizing cells when real size is not yet calculated
+        }
+
         NSLayoutConstraint.activate(constraints)
-        currentConstraints = constraints
+    }
+
+    required init?(coder aDecoder: NSCoder) { // Not supported
+        fatalError("init(coder:) has not been implemented")
     }
 
     var representedObject: ObjectController?
