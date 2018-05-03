@@ -78,11 +78,11 @@ class ViewElement: Element, PropertyElementType {
                 view.contentMode = contentMode
 
             default:
-                //objc_do({
+                objc_do(try: {
                         view.setValue(value, forKey: name)
-//                    }, { exception in
-//                        print(String(describing: exception))
-//                    })
+                    }, catch: { exception in
+                        print(String(describing: exception))
+                    })
         }
     }
 

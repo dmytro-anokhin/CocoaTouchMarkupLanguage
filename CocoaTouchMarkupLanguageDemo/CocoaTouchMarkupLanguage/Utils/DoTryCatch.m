@@ -6,13 +6,14 @@
 //  Copyright © 2018 Dmytro Anokhin. All rights reserved.
 //
 
-@import Foundation;
+#import "DoTryCatch.h"
 
 
-NS_ASSUME_NONNULL_BEGIN
-
-
-extern inline void objc_do(void (^tryBlock)(void), void (^catchBlock)(NSException *exception)) NS_SWIFT_NAME(objc_do(objc_try:objc_catch:));
-
-
-NS_ASSUME_NONNULL_END
+void objc_do(void (^tryBlock)(void), void (^catchBlock)(NSException *exception)) {
+    @try {
+        tryBlock();
+    }
+    @catch (NSException *exception) {
+        catchBlock(exception);
+    }
+}
