@@ -14,7 +14,7 @@
                     </view>
 
                     <view className="ContainerView" alignment="leading" relativeToMargins="true">
-                        <stackView key="contentView" axis="vertical" spacing="8.0">
+                        <stackView key="managedView" axis="vertical" spacing="8.0">
                             <label numberOfLines="2">
                                 <binding name="text" keyPath="title"/>
                                 <font key="font" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>

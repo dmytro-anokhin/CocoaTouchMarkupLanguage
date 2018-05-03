@@ -57,6 +57,8 @@
 		F495A3F52098E08600FB377B /* ScrollViewPrototypeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F495A3F42098E08600FB377B /* ScrollViewPrototypeElement.swift */; };
 		F495A3F72098E4C500FB377B /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = F495A3F62098E4C500FB377B /* Label.swift */; };
 		F495A3F9209A1A9000FB377B /* LabelElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F495A3F8209A1A9000FB377B /* LabelElement.swift */; };
+		F495A3FC209ABDC900FB377B /* ContainerViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F495A3FB209ABDC900FB377B /* ContainerViewType.swift */; };
+		F495A3FE209ABF6000FB377B /* ContainerViewDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = F495A3FD209ABF6000FB377B /* ContainerViewDefines.swift */; };
 		F4AAC2E02098D7BC00F798B1 /* FestivalDetails.xml in Resources */ = {isa = PBXBuildFile; fileRef = F4AAC2DF2098D7BC00F798B1 /* FestivalDetails.xml */; };
 		F4CB26552092767900258410 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CB26542092767900258410 /* Data+Extensions.swift */; };
 		F4CB265720927F8800258410 /* Amsterdam.json in Resources */ = {isa = PBXBuildFile; fileRef = F4CB265620927F8800258410 /* Amsterdam.json */; };
@@ -192,6 +194,8 @@
 		F495A3F42098E08600FB377B /* ScrollViewPrototypeElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewPrototypeElement.swift; sourceTree = "<group>"; };
 		F495A3F62098E4C500FB377B /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		F495A3F8209A1A9000FB377B /* LabelElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelElement.swift; sourceTree = "<group>"; };
+		F495A3FB209ABDC900FB377B /* ContainerViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewType.swift; sourceTree = "<group>"; };
+		F495A3FD209ABF6000FB377B /* ContainerViewDefines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewDefines.swift; sourceTree = "<group>"; };
 		F4AAC2DF2098D7BC00F798B1 /* FestivalDetails.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FestivalDetails.xml; sourceTree = "<group>"; };
 		F4CB26542092767900258410 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		F4CB265620927F8800258410 /* Amsterdam.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Amsterdam.json; sourceTree = "<group>"; };
@@ -415,6 +419,26 @@
 			path = Serialization;
 			sourceTree = "<group>";
 		};
+		F495A3FA209ABD9100FB377B /* ContainerView */ = {
+			isa = PBXGroup;
+			children = (
+				F495A3FB209ABDC900FB377B /* ContainerViewType.swift */,
+				F495A3FD209ABF6000FB377B /* ContainerViewDefines.swift */,
+				F4CB26AC2094B4DA00258410 /* ContainerView.swift */,
+			);
+			path = ContainerView;
+			sourceTree = "<group>";
+		};
+		F495A3FF209ABFF600FB377B /* SampleData */ = {
+			isa = PBXGroup;
+			children = (
+				F4CB26BC2094CF5000258410 /* SimpleFormData.json */,
+				F45589FE2094E9AA007F4703 /* countries.json */,
+				F4558A2020962F0F007F4703 /* Festivals.json */,
+			);
+			path = SampleData;
+			sourceTree = "<group>";
+		};
 		F4CB26532092766600258410 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -528,13 +552,11 @@
 		F4CB269B209485C900258410 /* Templates */ = {
 			isa = PBXGroup;
 			children = (
+				F495A3FF209ABFF600FB377B /* SampleData */,
 				F4CB269C209485E100258410 /* EmptyView.xml */,
 				F4CB26A72094AECD00258410 /* SimpleForm.xml */,
-				F4CB26BC2094CF5000258410 /* SimpleFormData.json */,
 				F45589FC2094E8EC007F4703 /* Countries.xml */,
-				F45589FE2094E9AA007F4703 /* countries.json */,
 				F4558A2220962F2E007F4703 /* Festivals.xml */,
-				F4558A2020962F0F007F4703 /* Festivals.json */,
 				F4AAC2DF2098D7BC00F798B1 /* FestivalDetails.xml */,
 				F434842A20982487009D2D36 /* InitialViewController.xml */,
 				F434843020982A6A009D2D36 /* Demos.plist */,
@@ -560,7 +582,7 @@
 		F4CB26AB2094B4CF00258410 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F4CB26AC2094B4DA00258410 /* ContainerView.swift */,
+				F495A3FA209ABD9100FB377B /* ContainerView */,
 				F4558A042094F0FC007F4703 /* TableView.swift */,
 				F4558A0F2095C206007F4703 /* TableViewCell.swift */,
 				F4558A1E209627FA007F4703 /* ImageView.swift */,
@@ -778,6 +800,7 @@
 				F4558A092095B99D007F4703 /* TableViewPrototypesElement.swift in Sources */,
 				F434843420982D87009D2D36 /* ActionElement.swift in Sources */,
 				F4CB269520947BA200258410 /* UIKitElementsFactory.swift in Sources */,
+				F495A3FE209ABF6000FB377B /* ContainerViewDefines.swift in Sources */,
 				F4558A1F209627FA007F4703 /* ImageView.swift in Sources */,
 				F495A3F72098E4C500FB377B /* Label.swift in Sources */,
 				F4CB266C209464DE00258410 /* Parser.swift in Sources */,
@@ -811,6 +834,7 @@
 				F45E7A1320918AE5009D5016 /* ObjectController+JSON.swift in Sources */,
 				F4CB266620944EAA00258410 /* LooseKeyValueObservableDelegating.swift in Sources */,
 				F4CB26C02094D05D00258410 /* BundleResourceElement.swift in Sources */,
+				F495A3FC209ABDC900FB377B /* ContainerViewType.swift in Sources */,
 				F4CB266220944D1100258410 /* KeyValueObserverRegistration.swift in Sources */,
 				F495A3F9209A1A9000FB377B /* LabelElement.swift in Sources */,
 				F4CB267D20946E0100258410 /* XMLDecodable.swift in Sources */,

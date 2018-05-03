@@ -7,13 +7,13 @@
 
         <view key="contentView" className="ContainerView" relativeToMargins="false" alignment="top">
 
-            <stackView key="contentView" axis="vertical" spacing="20.0">
+            <stackView key="managedView" axis="vertical" spacing="20.0">
                 <view className="ImageView" height="200.0" contentMode="scaleAspectFill" clipsToBounds="true">
                     <binding name="imageURL" keyPath="arguments.festival.media.@first.url"/>
                 </view>
 
                 <view className="ContainerView" alignment="leading" relativeToMargins="true">
-                    <stackView key="contentView" axis="vertical" spacing="20.0">
+                    <stackView key="managedView" axis="vertical" spacing="20.0">
                         <label numberOfLines="0">
                             <binding name="text" keyPath="arguments.festival.title"/>
                             <font key="font" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>

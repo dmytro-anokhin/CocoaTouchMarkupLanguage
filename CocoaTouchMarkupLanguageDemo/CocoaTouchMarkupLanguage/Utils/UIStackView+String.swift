@@ -68,21 +68,21 @@ extension UIStackViewAlignment {
             // UIStackViewAlignment has `top` and `bottom` cases defined as var making them indistinguishable from `leading` and `trailing`
 
             switch string.lowercased() {
-                case "fill".lowercased():
+                case "fill":
                     self = .fill
-                case "leading".lowercased():
+                case "leading":
                     self = .leading
-                case "top".lowercased():
+                case "top":
                     self = .top
-                case "firstBaseline".lowercased():
+                case "firstbaseline":
                     self = .firstBaseline
-                case "center".lowercased():
+                case "center":
                     self = .center
-                case "trailing".lowercased():
+                case "trailing":
                     self = .trailing
-                case "bottom".lowercased():
+                case "bottom":
                     self = .bottom
-                case "lastBaseline".lowercased():
+                case "lastbaseline":
                     self = .lastBaseline
                 default:
                     return nil

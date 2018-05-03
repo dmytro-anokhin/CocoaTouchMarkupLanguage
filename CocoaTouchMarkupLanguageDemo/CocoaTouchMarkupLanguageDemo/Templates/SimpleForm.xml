@@ -4,7 +4,7 @@
 
     <view className="ContainerView" relativeToMargins="true">
         <color key="backgroundColor" red="0.2" green="0.4" blue="0.4" alpha="1.0" colorSpace="rgb"/>
-        <stackView key="contentView" axis="vertical" spacing="8.0" alignment="center">
+        <stackView key="managedView" axis="vertical" spacing="8.0" alignment="center">
             <stackView>
                 <label text="Hello, ">
                     <color key="textColor" red="1.0" green="1.0" blue="1.0" alpha="1.0" colorSpace="rgb"/>
