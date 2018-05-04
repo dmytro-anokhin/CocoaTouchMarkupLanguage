@@ -6,7 +6,7 @@
             <binding name="rows" keyPath="demos"/>
 
             <prototypes>
-                <tableViewCell relativeToMargins="true" horizontalAlignment="leading">
+                <tableViewCell relativeToMargins="true" horizontalAlignment="leading" minHeight="44.0">
 
                     <label key="managedView">
                         <binding name="text" keyPath="self"/>

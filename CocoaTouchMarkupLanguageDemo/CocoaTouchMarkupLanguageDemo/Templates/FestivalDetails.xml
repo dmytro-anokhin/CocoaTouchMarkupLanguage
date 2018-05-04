@@ -5,7 +5,7 @@
     <scrollView>
         <color key="backgroundColor" red="1.0" green="1.0" blue="1.0" alpha="1.0" colorSpace="rgb"/>
 
-        <view key="contentView" className="ContainerView" relativeToMargins="false" alignment="top">
+        <view key="managedView" className="ContainerView" relativeToMargins="false" alignment="top">
 
             <stackView key="managedView" axis="vertical" spacing="20.0">
                 <view className="ImageView" height="200.0" contentMode="scaleAspectFill" clipsToBounds="true">

@@ -9,7 +9,9 @@
 import UIKit
 
 
-class ContainerView: UIView, ContainerViewType {
+class ContainerView: UIView, ContainerViewType, ContentViewAlignable {
+
+    // MARK: ContainerViewType
 
     var managedView: UIView? {
         willSet{
@@ -26,6 +28,26 @@ class ContainerView: UIView, ContainerViewType {
         }
     }
 
+    var relativeToMargins: Bool = false {
+        didSet {
+            setNeedsUpdateConstraints()
+        }
+    }
+
+    var relativeToReadableContent: Bool = false {
+        didSet {
+            setNeedsUpdateConstraints()
+        }
+    }
+
+    var relativeToSafeArea: Bool = false {
+        didSet {
+            setNeedsUpdateConstraints()
+        }
+    }
+
+    // MARK: ContentViewAlignable
+
     var horizontalAlignment: ContainerViewAlignment = .default {
         didSet {
             setNeedsUpdateConstraints()
@@ -38,20 +60,15 @@ class ContainerView: UIView, ContainerViewType {
         }
     }
 
-    var relativeToMargins: Bool = false {
-        didSet {
-            setNeedsUpdateConstraints()
-        }
-    }
+    // MARK: NSKeyValueCoding
 
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
-        if set(value: value, forKey: key) {
-            // noop
-        }
-        else {
+        if !set(value: value, forKey: key) {
             super.setValue(value, forUndefinedKey: key)
         }
     }
+
+    // MARK: UIConstraintBasedLayoutCoreMethods
 
     private var currentConstraints: [NSLayoutConstraint]?
 
@@ -67,53 +84,65 @@ class ContainerView: UIView, ContainerViewType {
             return
         }
 
-        let margins = relativeToMargins ? layoutMargins : .zero
+
+        let layoutItem: LayoutConstraintCreation
+
+        if relativeToReadableContent {
+            layoutItem = readableContentGuide
+        }
+        else if relativeToSafeArea {
+            layoutItem = safeAreaLayoutGuide
+        }
+        else if relativeToMargins {
+            layoutItem = layoutMarginsGuide
+        }
+        else {
+            layoutItem = self
+        }
 
         var constraints: [NSLayoutConstraint] = []
+
+        // TODO: Will center anchor work?
 
         switch horizontalAlignment {
             case .center:
                 constraints += [
-                    managedView.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor, constant: margins.left),
-                    managedView.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -1.0 * margins.bottom),
+                    managedView.leadingAnchor.constraint(greaterThanOrEqualTo: layoutItem.leadingAnchor, constant: 0.0),
+                    managedView.trailingAnchor.constraint(lessThanOrEqualTo: layoutItem.trailingAnchor, constant: 0.0),
                     managedView.centerXAnchor.constraint(equalTo: centerXAnchor)
                 ]
             case .leading:
                 constraints += [
-                    managedView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: margins.left),
-                    managedView.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -1.0 * margins.bottom)
+                    managedView.leadingAnchor.constraint(equalTo: layoutItem.leadingAnchor, constant: 0.0),
+                    managedView.trailingAnchor.constraint(lessThanOrEqualTo: layoutItem.trailingAnchor, constant: 0.0)
                 ]
             case .trailing:
                 constraints += [
-                    managedView.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor, constant: margins.left),
-                    managedView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -1.0 * margins.bottom)
+                    managedView.leadingAnchor.constraint(greaterThanOrEqualTo: layoutItem.leadingAnchor, constant: 0.0),
+                    managedView.trailingAnchor.constraint(equalTo: layoutItem.trailingAnchor, constant: 0.0)
                 ]
         }
 
         switch verticalAlignment {
             case .center:
                 constraints += [
-                    managedView.topAnchor.constraint(greaterThanOrEqualTo: topAnchor, constant: margins.top),
-                    managedView.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -1.0 * margins.bottom),
+                    managedView.topAnchor.constraint(greaterThanOrEqualTo: layoutItem.topAnchor, constant: 0.0),
+                    managedView.bottomAnchor.constraint(lessThanOrEqualTo: layoutItem.bottomAnchor, constant: 0.0),
                     managedView.centerYAnchor.constraint(equalTo: centerYAnchor)
                 ]
             case .leading:
                 constraints += [
-                    managedView.topAnchor.constraint(equalTo: topAnchor, constant: margins.top),
-                    managedView.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -1.0 * margins.bottom)
+                    managedView.topAnchor.constraint(equalTo: layoutItem.topAnchor, constant: 0.0),
+                    managedView.bottomAnchor.constraint(lessThanOrEqualTo: layoutItem.bottomAnchor, constant: 0.0)
                 ]
             case .trailing:
                 constraints += [
-                    managedView.topAnchor.constraint(greaterThanOrEqualTo: topAnchor, constant: margins.top),
-                    managedView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -1.0 * margins.bottom)
+                    managedView.topAnchor.constraint(greaterThanOrEqualTo: layoutItem.topAnchor, constant: 0.0),
+                    managedView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0.0)
                 ]
         }
 
         NSLayoutConstraint.activate(constraints)
         currentConstraints = constraints
-    }
-
-    override var intrinsicContentSize: CGSize {
-        return managedView?.intrinsicContentSize ?? super.intrinsicContentSize
     }
 }

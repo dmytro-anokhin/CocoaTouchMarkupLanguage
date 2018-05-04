@@ -120,13 +120,17 @@ extension UIView {
     }
 
     private func activateConstraint(withIdentifier identifier: String, affectingLayoutFor axis: UILayoutConstraintAxis, relation: NSLayoutRelation, constant: CGFloat) {
-        let constraint = NSLayoutConstraint(item: self, attribute: axis == .horizontal ? .width : .height, relatedBy: relation, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: constant)
+        let view = (self as? UITableViewCell)?.contentView ?? self
+
+        let constraint = NSLayoutConstraint(item: view, attribute: axis == .horizontal ? .width : .height, relatedBy: relation, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: constant)
         constraint.priority = UILayoutPriority.required - 1.0
         constraint.isActive = true
     }
 
     private func constraint(withIdentifier identifier: String, affectingLayoutFor axis: UILayoutConstraintAxis, relation: NSLayoutRelation? = nil) -> NSLayoutConstraint? {
-        return constraintsAffectingLayout(for: axis).filter({
+        let view = (self as? UITableViewCell)?.contentView ?? self
+
+        return view.constraintsAffectingLayout(for: axis).filter({
             if let relation = relation {
                 return $0.identifier == identifier && $0.relation == relation
             }

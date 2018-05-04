@@ -9,28 +9,52 @@
 import Foundation
 
 
-class ScrollView: UIScrollView {
+class ScrollView: UIScrollView, ContainerViewType {
 
-    @objc var contentView: UIView? {
+    // MARK: ContainerViewType
+
+    var managedView: UIView? {
         willSet{
-            contentView?.removeFromSuperview()
+            managedView?.removeFromSuperview()
         }
 
         didSet {
-            guard let contentView = contentView else {
+            guard let managedView = managedView else {
                 return
             }
 
-            contentView.translatesAutoresizingMaskIntoConstraints = false
-            addSubview(contentView)
+            managedView.translatesAutoresizingMaskIntoConstraints = false
+            addSubview(managedView)
         }
     }
 
-    @objc var relativeToMargins: Bool = false {
+    var relativeToMargins: Bool = false {
         didSet {
             setNeedsUpdateConstraints()
         }
     }
+
+    var relativeToReadableContent: Bool = false {
+        didSet {
+            setNeedsUpdateConstraints()
+        }
+    }
+
+    var relativeToSafeArea: Bool = false {
+        didSet {
+            setNeedsUpdateConstraints()
+        }
+    }
+
+    // MARK: NSKeyValueCoding
+
+    override func setValue(_ value: Any?, forUndefinedKey key: String) {
+        if !set(value: value, forKey: key) {
+            super.setValue(value, forUndefinedKey: key)
+        }
+    }
+
+    // MARK: UIConstraintBasedLayoutCoreMethods
 
     private var currentConstraints: [NSLayoutConstraint]?
 
@@ -42,24 +66,29 @@ class ScrollView: UIScrollView {
             currentConstraints = nil
         }
 
-        guard let contentView = contentView else {
+        guard let managedView = managedView else {
             return
         }
+
+        assert(!relativeToReadableContent, "relativeToReadableContent not supported yet")
+        assert(!relativeToSafeArea, "relativeToSafeArea not supported yet")
 
         let margins = relativeToMargins ? layoutMargins : .zero
 
         let constraints = [
-            contentView.topAnchor.constraint(equalTo: topAnchor, constant: margins.top),
-            contentView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: margins.left),
-            contentView.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -1.0 * margins.bottom),
-            contentView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -1.0 * margins.right),
+            managedView.topAnchor.constraint(equalTo: topAnchor, constant: margins.top),
+            managedView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: margins.left),
+            managedView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -1.0 * margins.bottom),
+            managedView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -1.0 * margins.right),
 
-            contentView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1.0)
+            managedView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1.0)
         ]
 
         NSLayoutConstraint.activate(constraints)
         currentConstraints = constraints
     }
+
+    // MARK: UIViewHierarchy
 
     private var heightConstraint: NSLayoutConstraint?
 

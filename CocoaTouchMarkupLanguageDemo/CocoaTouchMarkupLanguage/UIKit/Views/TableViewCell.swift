@@ -7,9 +7,11 @@
 //
 
 
-class TableViewCell: UITableViewCell, ContainerViewType {
+class TableViewCell: UITableViewCell, ContainerViewType, ContentViewAlignable {
 
-    @objc var managedView: UIView? {
+    // MARK: ContainerViewType
+
+    var managedView: UIView? {
         get {
             return containerView.managedView
         }
@@ -18,6 +20,38 @@ class TableViewCell: UITableViewCell, ContainerViewType {
             containerView.managedView = newValue
         }
     }
+
+    var relativeToMargins: Bool {
+        get {
+            return containerView.relativeToMargins
+        }
+
+        set {
+            containerView.relativeToMargins = newValue
+        }
+    }
+
+    var relativeToReadableContent: Bool {
+        get {
+            return containerView.relativeToReadableContent
+        }
+
+        set {
+            containerView.relativeToReadableContent = newValue
+        }
+    }
+
+    var relativeToSafeArea: Bool {
+        get {
+            return containerView.relativeToSafeArea
+        }
+
+        set {
+            containerView.relativeToSafeArea = newValue
+        }
+    }
+
+    // MARK: ContentViewAlignable
 
     var horizontalAlignment: ContainerViewAlignment {
         get {
@@ -39,28 +73,21 @@ class TableViewCell: UITableViewCell, ContainerViewType {
         }
     }
 
-    var relativeToMargins: Bool {
-        get {
-            return containerView.relativeToMargins
-        }
-
-        set {
-            containerView.relativeToMargins = newValue
-        }
-    }
+    // MARK: NSKeyValueCoding
 
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
-        if set(value: value, forKey: key) {
-            // noop
-        }
-        else {
+        if !set(value: value, forKey: key) {
             super.setValue(value, forUndefinedKey: key)
         }
     }
 
+    // MARK: UIConstraintBasedCompatibility
+
     override class var requiresConstraintBasedLayout: Bool {
         return true
     }
+
+    // MARK: -
 
     private let containerView: ContainerView!
 

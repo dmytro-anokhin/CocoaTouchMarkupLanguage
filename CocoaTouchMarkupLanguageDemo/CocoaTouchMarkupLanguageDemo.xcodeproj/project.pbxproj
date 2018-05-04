@@ -59,6 +59,7 @@
 		F495A3F9209A1A9000FB377B /* LabelElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F495A3F8209A1A9000FB377B /* LabelElement.swift */; };
 		F495A3FC209ABDC900FB377B /* ContainerViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F495A3FB209ABDC900FB377B /* ContainerViewType.swift */; };
 		F495A3FE209ABF6000FB377B /* ContainerViewDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = F495A3FD209ABF6000FB377B /* ContainerViewDefines.swift */; };
+		F495A401209C226800FB377B /* LayoutConstraintCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F495A400209C226800FB377B /* LayoutConstraintCreation.swift */; };
 		F4AAC2E02098D7BC00F798B1 /* FestivalDetails.xml in Resources */ = {isa = PBXBuildFile; fileRef = F4AAC2DF2098D7BC00F798B1 /* FestivalDetails.xml */; };
 		F4CB26552092767900258410 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CB26542092767900258410 /* Data+Extensions.swift */; };
 		F4CB265720927F8800258410 /* Amsterdam.json in Resources */ = {isa = PBXBuildFile; fileRef = F4CB265620927F8800258410 /* Amsterdam.json */; };
@@ -196,6 +197,7 @@
 		F495A3F8209A1A9000FB377B /* LabelElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelElement.swift; sourceTree = "<group>"; };
 		F495A3FB209ABDC900FB377B /* ContainerViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewType.swift; sourceTree = "<group>"; };
 		F495A3FD209ABF6000FB377B /* ContainerViewDefines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewDefines.swift; sourceTree = "<group>"; };
+		F495A400209C226800FB377B /* LayoutConstraintCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConstraintCreation.swift; sourceTree = "<group>"; };
 		F4AAC2DF2098D7BC00F798B1 /* FestivalDetails.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FestivalDetails.xml; sourceTree = "<group>"; };
 		F4CB26542092767900258410 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		F4CB265620927F8800258410 /* Amsterdam.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Amsterdam.json; sourceTree = "<group>"; };
@@ -575,6 +577,7 @@
 				F4CB26B62094C7FF00258410 /* UILayoutConstraintAxis+String.swift */,
 				F4CB26B82094C81F00258410 /* UIStackView+String.swift */,
 				F4558A1C20961AFF007F4703 /* UIView+String.swift */,
+				F495A400209C226800FB377B /* LayoutConstraintCreation.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -833,6 +836,7 @@
 				F4CB2674209465C100258410 /* XMLNode+CustomStringConvertible.swift in Sources */,
 				F45E7A1320918AE5009D5016 /* ObjectController+JSON.swift in Sources */,
 				F4CB266620944EAA00258410 /* LooseKeyValueObservableDelegating.swift in Sources */,
+				F495A401209C226800FB377B /* LayoutConstraintCreation.swift in Sources */,
 				F4CB26C02094D05D00258410 /* BundleResourceElement.swift in Sources */,
 				F495A3FC209ABDC900FB377B /* ContainerViewType.swift in Sources */,
 				F4CB266220944D1100258410 /* KeyValueObserverRegistration.swift in Sources */,
