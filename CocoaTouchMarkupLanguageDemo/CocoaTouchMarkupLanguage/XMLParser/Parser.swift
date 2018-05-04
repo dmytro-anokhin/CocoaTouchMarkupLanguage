@@ -44,42 +44,12 @@ public final class Parser: NSObject {
 
 extension Parser: XMLParserDelegate {
 
-    public func parserDidStartDocument(_ parser: XMLParser) {
-        print("parserDidStartDocument")
-    }
-
     public func parserDidEndDocument(_ parser: XMLParser) {
-        print("parserDidEndDocument")
         completion?(root)
         completion = nil
     }
 
-    public func parser(_ parser: XMLParser, foundNotationDeclarationWithName name: String, publicID: String?, systemID: String?)  {
-        print("foundNotationDeclarationWithName")
-    }
-
-    public func parser(_ parser: XMLParser, foundUnparsedEntityDeclarationWithName name: String, publicID: String?, systemID: String?, notationName: String?) {
-        print("foundUnparsedEntityDeclarationWithName")
-    }
-
-    public func parser(_ parser: XMLParser, foundAttributeDeclarationWithName attributeName: String, forElement elementName: String, type: String?, defaultValue: String?) {
-        print("foundAttributeDeclarationWithName")
-    }
-
-    public func parser(_ parser: XMLParser, foundElementDeclarationWithName elementName: String, model: String) {
-        print("foundElementDeclarationWithName")
-    }
-
-    public func parser(_ parser: XMLParser, foundInternalEntityDeclarationWithName name: String, value: String?) {
-        print("foundInternalEntityDeclarationWithName")
-    }
-
-    public func parser(_ parser: XMLParser, foundExternalEntityDeclarationWithName name: String, publicID: String?, systemID: String?) {
-        print("foundExternalEntityDeclarationWithName")
-    }
-
     public func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
-        print("didStartElement \(elementName)")
         var node = XMLNode(name: elementName)
         node.attributes = attributeDict
 
@@ -87,7 +57,6 @@ extension Parser: XMLParserDelegate {
     }
 
     public func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-        print("didEndElement \(elementName)")
         let last = stack.popLast()!
 
         if stack.isEmpty {
@@ -101,46 +70,8 @@ extension Parser: XMLParserDelegate {
         }
     }
 
-    public func parser(_ parser: XMLParser, didStartMappingPrefix prefix: String, toURI namespaceURI: String) {
-        print("didStartMappingPrefix")
-    }
-
-    public func parser(_ parser: XMLParser, didEndMappingPrefix prefix: String) {
-        print("didEndMappingPrefix")
-    }
-
-    public func parser(_ parser: XMLParser, foundCharacters string: String) {
-        print("foundCharacters")
-    }
-
-    public func parser(_ parser: XMLParser, foundIgnorableWhitespace whitespaceString: String) {
-        print("foundIgnorableWhitespace")
-    }
-
-    public func parser(_ parser: XMLParser, foundProcessingInstructionWithTarget target: String, data: String?) {
-        print("foundProcessingInstructionWithTarget")
-    }
-
-    public func parser(_ parser: XMLParser, foundComment comment: String) {
-        print("foundComment")
-    }
-
     public func parser(_ parser: XMLParser, foundCDATA CDATABlock: Data) {
-        print("foundCDATA")
         updateLast { $0.CDATA = CDATABlock }
-    }
-
-    public func parser(_ parser: XMLParser, resolveExternalEntityName name: String, systemID: String?) -> Data? {
-        print("resolveExternalEntityName")
-        return nil
-    }
-
-    public func parser(_ parser: XMLParser, parseErrorOccurred parseError: Error) {
-        print("parseErrorOccurred")
-    }
-
-    public func parser(_ parser: XMLParser, validationErrorOccurred validationError: Error) {
-        print("validationErrorOccurred")
     }
 }
 
