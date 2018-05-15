@@ -11,7 +11,7 @@ import UIKit
 
 class ImageElement: Element, PropertyElementType {
 
-    override var instance: Any? {
+    override func load() -> Any? {
         guard let name = attributes["name"] else {
             return nil
         }

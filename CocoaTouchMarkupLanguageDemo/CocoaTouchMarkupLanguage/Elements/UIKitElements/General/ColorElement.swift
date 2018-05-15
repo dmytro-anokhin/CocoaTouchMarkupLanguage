@@ -15,17 +15,7 @@ import UIKit
 */
 class ColorElement: Element, PropertyElementType {
 
-    private var color: UIColor?
-
-    override var instance: Any? {
-        if color == nil {
-            color = loadColor()
-        }
-
-        return color
-    }
-
-    private func loadColor() -> UIColor? {
+    override func load() -> Any? {
         guard let colorSpace = attributes["colorSpace"] else {
             print("Color node must define colorSpace")
             return nil

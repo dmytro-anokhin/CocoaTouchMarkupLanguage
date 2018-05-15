@@ -10,17 +10,7 @@ import UIKit
 
 class FontElement: Element, PropertyElementType {
 
-    private var font: UIFont?
-
-    override var instance: Any? {
-        if font == nil {
-            font = loadFont()
-        }
-
-        return font
-    }
-
-    private func loadFont() -> UIFont? {
+    override func load() -> Any? {
         guard let pointSizeString = attributes["pointSize"],
               let pointSize = CGFloat(pointSizeString)
         else {
