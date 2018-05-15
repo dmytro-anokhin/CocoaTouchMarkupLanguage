@@ -7,11 +7,12 @@
 //
 
 
-class ElementPrototype: ElementType, XMLDecodable {
+public protocol ElementPrototypeType: ElementType {
 
-    public var name: String {
-        return xmlNode.name
-    }
+}
+
+
+class ElementPrototype: ElementPrototypeType, XMLDecodable {
 
     public var children: [ElementType] {
         return xmlNode.children.map { try! ElementPrototype(from: $0) }
@@ -19,6 +20,10 @@ class ElementPrototype: ElementType, XMLDecodable {
 
     public var attributes: [String: String] {
         return xmlNode.attributes
+    }
+
+    public var instance: Any? {
+        return nil
     }
 
     public required init(from xmlNode: XMLNode) throws {

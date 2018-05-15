@@ -14,11 +14,4 @@ class LabelElement: ViewElement {
     override var viewClass: UIView.Type {
         return objectClass as? UILabel.Type ?? Label.self
     }
-
-    override func loadView() -> UIView {
-        let view = super.loadView()
-        view.isOpaque = true
-
-        return view
-    }
 }

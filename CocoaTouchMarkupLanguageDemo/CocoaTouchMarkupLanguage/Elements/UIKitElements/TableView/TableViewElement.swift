@@ -19,8 +19,8 @@ class TableViewElement: ViewElement {
         return objectClass as? UITableView.Type ?? TableView.self
     }
 
-    override func unknownChild(_ child: ElementType, view: UIView) {
-        guard let tableView = view as? TableView else {
+    override func processChild(_ child: ElementType, instance: Any) {
+        guard let tableView = instance as? TableView else {
             assertionFailure("Expected TableView subclass \(view)")
             return
         }
@@ -35,7 +35,7 @@ class TableViewElement: ViewElement {
                 addCellPrototype(cellPrototype, tableView: tableView)
 
             default:
-                super.unknownChild(child, view: view)
+                super.processChild(child, instance: instance)
         }
     }
 

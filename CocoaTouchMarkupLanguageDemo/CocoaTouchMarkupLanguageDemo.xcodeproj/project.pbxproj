@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F411F2FC20A9467E00CC5B50 /* ViewControllerElementType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F411F2FB20A9467E00CC5B50 /* ViewControllerElementType.swift */; };
+		F411F2FE20A94A4200CC5B50 /* ViewElementType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F411F2FD20A94A4200CC5B50 /* ViewElementType.swift */; };
 		F42872832091EB9900379048 /* CityNames.json in Resources */ = {isa = PBXBuildFile; fileRef = F42872822091EB9900379048 /* CityNames.json */; };
 		F42872852091FC7000379048 /* ObjectControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42872842091FC7000379048 /* ObjectControllerTests.swift */; };
 		F432A2AB2098910300FB439F /* ArgumentElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F432A2AA2098910300FB439F /* ArgumentElement.swift */; };
@@ -142,6 +144,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F411F2FB20A9467E00CC5B50 /* ViewControllerElementType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerElementType.swift; sourceTree = "<group>"; };
+		F411F2FD20A94A4200CC5B50 /* ViewElementType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewElementType.swift; sourceTree = "<group>"; };
 		F42872822091EB9900379048 /* CityNames.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CityNames.json; sourceTree = "<group>"; };
 		F42872842091FC7000379048 /* ObjectControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectControllerTests.swift; sourceTree = "<group>"; };
 		F432A2AA2098910300FB439F /* ArgumentElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgumentElement.swift; sourceTree = "<group>"; };
@@ -518,6 +522,7 @@
 		F4CB269020947ACB00258410 /* ViewControllerElement */ = {
 			isa = PBXGroup;
 			children = (
+				F411F2FB20A9467E00CC5B50 /* ViewControllerElementType.swift */,
 				F4CB269220947AF800258410 /* ViewControllerElementsFactory.swift */,
 				F4CB268E20947AC100258410 /* ViewControllerElement.swift */,
 				F434842E209826FC009D2D36 /* NavigationControllerElement.swift */,
@@ -539,6 +544,7 @@
 		F4CB26962094846A00258410 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F411F2FD20A94A4200CC5B50 /* ViewElementType.swift */,
 				F4CB2699209484B100258410 /* ViewElementsFactory.swift */,
 				F4CB269E2094885500258410 /* ViewPrototypeElement.swift */,
 				F4CB26972094849C00258410 /* ViewElement.swift */,
@@ -817,6 +823,7 @@
 				F495A3F12098DF6400FB377B /* ScrollView.swift in Sources */,
 				F4558A0C2095BBF2007F4703 /* TableViewCellElement.swift in Sources */,
 				F45589F82094DCA4007F4703 /* KeyValueBinding.swift in Sources */,
+				F411F2FC20A9467E00CC5B50 /* ViewControllerElementType.swift in Sources */,
 				F4CB26A42094A81C00258410 /* DoTryCatch.m in Sources */,
 				F4CB26C22094D20000258410 /* ObjectControllerElement.swift in Sources */,
 				F4558A0E2095BC02007F4703 /* TableViewCellPrototypeElement.swift in Sources */,
@@ -832,6 +839,7 @@
 				F4CB26602094490A00258410 /* ObservationToken.swift in Sources */,
 				F4558A2920963487007F4703 /* FontElement.swift in Sources */,
 				F434842920981655009D2D36 /* ViewControllerBuilder.swift in Sources */,
+				F411F2FE20A94A4200CC5B50 /* ViewElementType.swift in Sources */,
 				F4CB26AD2094B4DA00258410 /* ContainerView.swift in Sources */,
 				F4CB2674209465C100258410 /* XMLNode+CustomStringConvertible.swift in Sources */,
 				F45E7A1320918AE5009D5016 /* ObjectController+JSON.swift in Sources */,

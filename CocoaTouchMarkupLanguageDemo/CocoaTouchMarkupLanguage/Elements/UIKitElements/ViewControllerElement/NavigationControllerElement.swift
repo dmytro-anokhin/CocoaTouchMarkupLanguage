@@ -9,30 +9,17 @@
 import UIKit
 
 
-public class NavigationControllerElement: Element, PropertyElementType {
+public class NavigationControllerElement: Element, PropertyElementType, ViewControllerElementType {
 
-    var value: Any? {
-        return navigationController
-    }
+    // MARK: Element
 
     override public class var factory: ElementsFactoryType {
         return ViewControllerElementsFactory()
     }
 
-    public lazy var navigationController: UINavigationController = {
-        let navigationController = NavigationController(navigationBarClass: nil, toolbarClass: nil)
+    // MARK: Private
 
-        for child in children {
-            switch child {
-                case let property as ElementType & PropertyElementType:
-                    setProperty(property, object: navigationController)
-
-                default:
-                    //unknownChild(child, view: view)
-                    break
-            }
-        }
-
-        return navigationController
-    }()
+    override func instantiate() -> Any? {
+        return NavigationController(navigationBarClass: nil, toolbarClass: nil)
+    }
 }

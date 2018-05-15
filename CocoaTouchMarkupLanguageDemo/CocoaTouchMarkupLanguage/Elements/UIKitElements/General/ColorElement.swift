@@ -15,17 +15,13 @@ import UIKit
 */
 class ColorElement: Element, PropertyElementType {
 
-    private var _color: UIColor?
+    private var color: UIColor?
 
-    var color: UIColor? {
-        if _color == nil {
-            _color = loadColor()
+    override var instance: Any? {
+        if color == nil {
+            color = loadColor()
         }
 
-        return _color
-    }
-
-    var value: Any? {
         return color
     }
 

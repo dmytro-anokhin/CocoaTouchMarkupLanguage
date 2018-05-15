@@ -9,22 +9,34 @@
 import UIKit
 
 
-public class ViewControllerElement: Element, PropertyElementType {
+public class ViewControllerElement: Element, PropertyElementType, ViewControllerElementType {
 
-    var value: Any? {
-        return viewController
-    }
+    // MARK: Element
 
     override public class var factory: ElementsFactoryType {
         return ViewControllerElementsFactory()
     }
 
-    public lazy var viewController: ViewController = {
-        let viewController = ViewController(nibName: nil, bundle: nil)
+    // MARK: Loading
 
-        viewController.viewPrototypeElement = children.first { $0 is ViewPrototypeElement } as? ViewPrototypeElement
-        viewController.objectControllerElement = children.first { $0 is ObjectControllerElement } as? ObjectControllerElement
+    override func instantiate() -> Any? {
+        return ViewController(nibName: nil, bundle: nil)
+    }
 
-        return viewController
-    }()
+    override func processChild(_ child: ElementType, instance: Any) {
+        guard let viewController = instance as? ViewController else {
+            fatalError("Expected \(type(of: ViewController.self)), got: \(instance)")
+        }
+
+        switch child {
+            case let viewPrototype as ViewPrototypeElement:
+                viewController.viewPrototypeElement = viewPrototype
+
+            case let objectController as ObjectControllerElement:
+                viewController.objectControllerElement = objectController
+
+            default:
+                super.processChild(child, instance: instance)
+        }
+    }
 }

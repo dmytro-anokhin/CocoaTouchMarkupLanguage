@@ -17,7 +17,7 @@ class TableViewPrototypesElement: Element {
         try super.init(from: xmlNode)
     }
 
-    public required init(name: String, children: [ElementType], attributes: [String : String]) {
-        super.init(name: name, children: children, attributes: attributes)
+    public required init(children: [ElementType], attributes: [String : String]) {
+        super.init(children: children, attributes: attributes)
     }
 }

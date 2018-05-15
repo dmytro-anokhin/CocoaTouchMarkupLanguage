@@ -9,65 +9,39 @@
 import UIKit
 
 
-class ViewElement: Element, PropertyElementType {
+class ViewElement: Element, PropertyElementType, ViewElementType {
+
+    // MARK: Element
 
     override class var factory: ElementsFactoryType {
         return ViewElementsFactory()
     }
 
-    private var _view: UIView?
+    // MARK: Loading
 
-    var view: UIView {
-        if _view == nil {
-            _view = loadView()
-        }
-
-        return _view!
-    }
-
-    var value: Any? {
-        return view
-    }
-
-    var viewClass: UIView.Type {
-        return objectClass as? UIView.Type ?? UIView.self
-    }
-
-    func loadView() -> UIView {
-        let view = instantiateView()
-        configureView(view)
-
-        return view
-    }
-
-    func instantiateView() -> UIView {
+    override func instantiate() -> Any? {
         return viewClass.init()
     }
 
-    func configureView(_ view: UIView) {
-        for attribute in attributes {
-            if Keywords.contains(attribute.key) {
-                continue
-            }
-
-            applyAttribute(attribute.key, value: attribute.value, view: view)
+    override func processChild(_ child: ElementType, instance: Any) {
+        guard let view = instance as? UIView else {
+            fatalError("Expected \(type(of: UIView.self)), got: \(instance)")
         }
 
-        for child in children {
-            switch child {
-                case let subview as ViewElement where subview.key == nil:
-                    addSubview(subview, view: view)
+        switch child {
+            case let subview as ViewElement where subview.key == nil:
+                addSubview(subview, view: view)
 
-                case let property as ElementType & PropertyElementType:
-                    setProperty(property, object: view)
-
-                default:
-                    unknownChild(child, view: view)
-            }
+            default:
+                super.processChild(child, instance: instance)
         }
     }
 
-    func applyAttribute(_ name: String, value: String, view: UIView) {
+    override func applyAttribute(name: String, value: String, instance: Any) {
+        guard let view = instance as? UIView else {
+            fatalError("Expected \(type(of: UIView.self)), got: \(instance)")
+        }
+
         switch name {
             case "contentMode":
                 guard let contentMode = UIViewContentMode(string: value) else {
@@ -78,12 +52,14 @@ class ViewElement: Element, PropertyElementType {
                 view.contentMode = contentMode
 
             default:
-                objc_do(try: {
-                        view.setValue(value, forKey: name)
-                    }, catch: { exception in
-                        print(String(describing: exception))
-                    })
+                super.applyAttribute(name: name, value: value, instance: instance)
         }
+    }
+
+    // MARK: Internal
+
+    var viewClass: UIView.Type {
+        return objectClass as? UIView.Type ?? UIView.self
     }
 
     func addSubview(_ subview: ViewElement, view: UIView) {
@@ -95,9 +71,4 @@ class ViewElement: Element, PropertyElementType {
                 view.addSubview(subview.view)
         }
     }
-
-    func unknownChild(_ child: ElementType, view: UIView) {
-        // print(child)
-    }
 }
-

@@ -21,9 +21,9 @@ class TableViewCellElement: ViewElement {
 
     var reuseIdentifier: String?
 
-    override func instantiateView() -> UIView {
+    override func instantiate() -> Any? {
         guard let cellClass = viewClass as? UITableViewCell.Type else {
-            fatalError("Expected UITableViewCell class, got \(viewClass)")
+            fatalError("Expected \(type(of: UITableViewCell.self)), got \(viewClass)")
         }
 
         return cellClass.init(style: .default, reuseIdentifier: reuseIdentifier)
@@ -31,15 +31,9 @@ class TableViewCellElement: ViewElement {
 
     override func addSubview(_ subview: ViewElement, view: UIView) {
         guard let cell = view as? UITableViewCell else {
-            assertionFailure("Expected UITableViewCell instance, got \(view)")
-            return
+            fatalError("Expected \(type(of: UITableViewCell.self)), got \(view)")
         }
 
-//        if let cell = cell as? TableViewCell {
-//            cell.addContainerSubview(subview.view)
-//        }
-//        else {
-            cell.contentView.addSubview(subview.view)
-//        }
+        cell.contentView.addSubview(subview.view)
     }
 }

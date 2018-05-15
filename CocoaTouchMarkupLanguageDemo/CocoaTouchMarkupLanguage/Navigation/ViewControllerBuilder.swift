@@ -32,7 +32,10 @@ public struct ViewControllerBuilder {
 
         do {
             let element = try ViewControllerElement(from: xmlNode)
-            let viewController = element.viewController
+
+            guard let viewController = element.viewController as? ViewController else {
+                throw Error.incomplete
+            }
 
             viewController.representedObject?.setValue((arguments as NSDictionary).mutableCopy(), forKey: "arguments")
 

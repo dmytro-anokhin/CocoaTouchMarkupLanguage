@@ -8,11 +8,11 @@
 
 public protocol ElementType {
 
-    var name: String { get }
-
     var children: [ElementType] { get }
 
     var attributes: [String: String] { get }
+
+    var instance: Any? { get }
 }
 
 

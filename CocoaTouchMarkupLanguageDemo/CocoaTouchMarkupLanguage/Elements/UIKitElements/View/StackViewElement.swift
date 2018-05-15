@@ -11,11 +11,19 @@ import UIKit
 
 class StackViewElement: ViewElement {
 
+    // MARK: ViewElement
+
     override var viewClass: UIView.Type {
         return objectClass as? UIStackView.Type ?? UIStackView.self
     }
 
-    override func applyAttribute(_ name: String, value: String, view: UIView) {
+    // MARK: Loading
+
+    override func applyAttribute(name: String, value: String, instance: Any) {
+        guard let stackView = instance as? UIStackView else {
+            fatalError("Expected \(type(of: UIStackView.self)), got: \(instance)")
+        }
+
         switch name {
             case "axis":
                 guard let axis = UILayoutConstraintAxis(string: value) else {
@@ -23,7 +31,7 @@ class StackViewElement: ViewElement {
                     return
                 }
 
-                (view as! UIStackView).axis = axis
+                stackView.axis = axis
 
             case "distribution":
                 guard let distribution = UIStackViewDistribution(string: value) else {
@@ -31,7 +39,7 @@ class StackViewElement: ViewElement {
                     return
                 }
 
-                (view as! UIStackView).distribution = distribution
+                stackView.distribution = distribution
 
             case "alignment":
                 guard let alignment = UIStackViewAlignment(string: value) else {
@@ -39,11 +47,10 @@ class StackViewElement: ViewElement {
                     return
                 }
 
-                (view as! UIStackView).alignment = alignment
+                stackView.alignment = alignment
 
             default:
-                super.applyAttribute(name, value: value, view: view)
+                super.applyAttribute(name: name, value: value, instance: instance)
         }
     }
 }
-

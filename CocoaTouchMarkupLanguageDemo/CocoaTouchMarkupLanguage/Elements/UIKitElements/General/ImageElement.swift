@@ -11,15 +11,11 @@ import UIKit
 
 class ImageElement: Element, PropertyElementType {
 
-    var image: UIImage? {
+    override var instance: Any? {
         guard let name = attributes["name"] else {
             return nil
         }
 
         return UIImage(named: name)
-    }
-
-    var value: Any? {
-        return image
     }
 }

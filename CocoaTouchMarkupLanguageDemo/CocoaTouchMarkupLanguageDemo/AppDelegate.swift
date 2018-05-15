@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             do {
                 let element = try NavigationControllerElement(from: xmlNode)
-                self.window?.rootViewController = element.navigationController
+                self.window?.rootViewController = element.viewController
             }
             catch {
                 print(error)

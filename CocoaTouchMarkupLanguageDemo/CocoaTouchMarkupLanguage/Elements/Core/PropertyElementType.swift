@@ -20,4 +20,8 @@ extension ElementType where Self: PropertyElementType {
     var key: String? {
         return attributes.first { $0.key == "key" }?.value
     }
+
+    var value: Any? {
+        return instance
+    }
 }

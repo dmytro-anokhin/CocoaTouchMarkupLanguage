@@ -9,19 +9,23 @@
 
 public class Element: ElementType, XMLDecodable {
 
-    public class var factory: ElementsFactoryType {
-        return ElementsFactory()
-    }
-
-    public let name: String
+    // MARK: ElementType
 
     public let children: [ElementType]
 
     public let attributes: [String: String]
 
-    public required init(from xmlNode: XMLNode) throws {
+    public var instance: Any? {
+        if _instance == nil {
+            load()
+        }
 
-        self.name = xmlNode.name
+        return _instance
+    }
+
+    // MARK: XMLDecodable
+
+    public required init(from xmlNode: XMLNode) throws {
 
         let factory = type(of: self).factory
 
@@ -38,11 +42,60 @@ public class Element: ElementType, XMLDecodable {
         self.attributes = xmlNode.attributes
     }
 
-    public required init(name: String, children: [ElementType], attributes: [String: String]) {
-        self.name = name
+    // MARK: Loading
+
+    private var _instance: Any?
+
+    func load() {
+        _instance = instantiate()
+        configure()
+    }
+
+    func instantiate() -> Any? {
+        return nil
+    }
+
+    private func configure() {
+        guard let instance = _instance else {
+            assertionFailure("Instance not instantiated: \(self)")
+            return
+        }
+
+        for attribute in attributes {
+            if Keywords.contains(attribute.key) {
+                continue
+            }
+
+            applyAttribute(name: attribute.key, value: attribute.value, instance: instance)
+        }
+
+        for child in children {
+            processChild(child, instance: instance)
+        }
+    }
+
+    func processChild(_ child: ElementType, instance: Any) {
+        switch child {
+            case let property as ElementType & PropertyElementType:
+                applyProperty(property, instance: instance)
+
+            default:
+                print("Child not supported \(child)")
+        }
+    }
+
+    // MARK: Public
+
+    public class var factory: ElementsFactoryType {
+        return ElementsFactory()
+    }
+
+    public required init(children: [ElementType], attributes: [String: String]) {
         self.children = children
         self.attributes = attributes
     }
+
+    // MARK: Internal
 
     var objectClass: AnyClass? {
         guard let className = attributes.first(where: { $0.key.lowercased() == Keywords.className.lowercased() })?.value else {
@@ -65,6 +118,37 @@ public class Element: ElementType, XMLDecodable {
 
         objc_do(try: {
                 object.setValue(property.value, forKey: key)
+            }, catch:{ exception in
+                print(String(describing: exception))
+            })
+    }
+
+    func applyAttribute(name: String, value: String, instance: Any) {
+        guard let keyValueCoding = instance as? KeyValueCoding else {
+            assertionFailure("Instance does not support key-value coding: \(instance)")
+            return
+        }
+
+        objc_do(try: {
+                keyValueCoding.setValue(value, forKey: name)
+            }, catch: { exception in
+                print(String(describing: exception))
+            })
+    }
+
+    func applyProperty(_ property: ElementType & PropertyElementType, instance: Any) {
+        guard let key = property.key else {
+            assertionFailure("Property element expected to have a key: \(property)")
+            return
+        }
+
+        guard let keyValueCoding = instance as? KeyValueCoding else {
+            assertionFailure("Instance does not support key-value coding: \(instance)")
+            return
+        }
+
+        objc_do(try: {
+                keyValueCoding.setValue(property.value, forKey: key)
             }, catch:{ exception in
                 print(String(describing: exception))
             })

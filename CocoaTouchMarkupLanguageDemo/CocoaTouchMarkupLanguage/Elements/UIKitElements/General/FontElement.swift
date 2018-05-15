@@ -10,17 +10,13 @@ import UIKit
 
 class FontElement: Element, PropertyElementType {
 
-    private var _font: UIFont?
+    private var font: UIFont?
 
-    var font: UIFont? {
-        if _font == nil {
-            _font = loadFont()
+    override var instance: Any? {
+        if font == nil {
+            font = loadFont()
         }
 
-        return _font
-    }
-
-    var value: Any? {
         return font
     }
 
